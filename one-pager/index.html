@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hybride wereld - Overwatch Six</title>
     <link href="style.css" rel="stylesheet">
-
-
+    <link href="collapsible.css" rel="stylesheet">
+    <link href="twocolumns.css" rel="stylesheet">
+    <link href="team.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -303,18 +304,84 @@
         </div>
     </section>
 
-    <section id="team" class="team">
-        <section id="teamwaarden" class="teamwaarden">
-            <button type="button" class="collapsible-waarden">Creativiteit</button>
-            <div class="content">
-            <p>We willen een origineel product ontwikkelen met behulp van nieuwe 
-                technieken en geven daarbij ruimte aan vernieuwende oplossingen.</p>
+    <!-- Team Section -->
+    <section class="container team">
+        <section class="meettheteam">
+            <h2 class="section-title fade-in">Meet the team</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images/Tobias.jpeg" alt="Tobias">
+                    <p class="name">Tobias Zelders</p>
+                    <p class="study">INF</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Julina.jpeg" alt="Julina">
+                    <p class="name">Julina Mercera</p>
+                    <p class="study">INF</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Abigail.jpeg" alt="Abigail">
+                    <p class="name">Abigail Toekimin</p>
+                    <p class="study">CMGT</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Pepijn.jpeg" alt="Pepijn">
+                    <p class="name">Pepijn Groeneweg</p>
+                    <p class="study">CMD</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Tally.jpeg" alt="Tally">
+                    <p class="name">Tallysia Kromohardjo</p>
+                    <p class="study">CMD</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Tyrese.jpeg" alt="Tyrese">
+                    <p class="name">Tyrese Goedhart</p>
+                    <p class="study">ADSAI</p>
+                </div>
             </div>
-            
         </section>
-        <section id="samenwerking" class="samenwerking">
-
-        </section>
+        <div class="row">
+            <section class="teamwaarden column">
+                <h2 class="section-title fade-in">Teamwaarden</h2>
+                <button type="button" class="collapsible-button">Creativiteit</button>
+                <div class="collapsible-content">
+                <p>We willen een origineel product ontwikkelen met behulp van nieuwe 
+                    technieken en geven daarbij ruimte aan vernieuwende oplossingen.</p>
+                </div>
+                <button type="button" class="collapsible-button">Plezier</button>
+                <div class="collapsible-content">
+                <p>Wij willen een product creëren die met plezier gebruikt kan worden. 
+                    Interactieve componenten die info geven op een leuke manier en zonder te veel zorgen.</p>
+                </div>
+                <button type="button" class="collapsible-button">Nieuwsgierigheid</button>
+                <div class="collapsible-content">
+                <p>We willen door interactieve VR en game omgevingen te gebruiken nieuwsgierigheid 
+                    stimuleren en zo diepere betrokkenheid bij stedelijke ontwikkeling creëren.</p>
+                </div>
+                <button type="button" class="collapsible-button">Inclusiviteit</button>
+                <div class="collapsible-content">
+                <p>We willen een product dat deels inclusief is door rekening te 
+                    houden met bijvoorbeeld taal, leeftijd, cultuur of gender.</p>
+                </div>
+                <button type="button" class="collapsible-button">Privacy</button>
+                <div class="collapsible-content">
+                <p>We willen de privacy zo goed mogelijk waarborgen waar mogelijk voor de burger.
+                    We zullen de burger anonimiteit als optie geven, en encryptie gebruiken voor gevoelige data.</p>
+                </div>
+            </section>
+            <section class="samenwerking column">
+                <h2 class="section-title fade-in">Samenwerking</h2>
+                    <p>
+                    Binnen ons team vinden we het belangrijk dat iedereen zich gehoord voelt en weet waar hij of zij aan toe is. 
+                    Daarom communiceren we regelmatig en maken we duidelijke afspraken. 
+                    We werken met een heldere taakverdeling, maar helpen elkaar wanneer dat nodig is.
+                    Ideeën maken we vaak visueel met schetsen, voorbeelden of prototypes om misverstanden te voorkomen. 
+                    Tijdens overlegmomenten delen we onze voortgang,
+                    bespreken we uitdagingen en geven we elkaar op een respectvolle manier feedback.
+                    </p>
+            </section>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -331,6 +398,6 @@
     </footer>
 
 <script src="templatemo-personal-javascripts.js"></script>
-
+<script src="collapsible.js"></script>
 </body>
 </html>

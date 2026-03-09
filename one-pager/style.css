@@ -125,7 +125,7 @@ https://templatemo.com/tm-593-personal-shape
 :root {
     --primary-color: #6366f1;
     --secondary-color: #8b5cf6;
-    --accent-color: #f59e0b;
+    --accent-color: #FBF2F9;
     --accent-pink: #ec4899;
     --accent-cyan: #06b6d4;
     --text-primary: #0f172a;
@@ -603,29 +603,18 @@ section {
 }
 
 .section-title {
-    text-align: center;
+    text-align: left;
     font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
     font-size: 3.5rem;
     font-weight: 600;
-    margin-bottom: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     background: var(--gradient-elegant);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -1px;
     position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 4px;
-    background: var(--gradient-primary);
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
 }
 
 /* About Section */

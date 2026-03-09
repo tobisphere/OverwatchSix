@@ -1,0 +1,66 @@
+.team {
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.samenwerking p {
+    background: var(--accent-color);
+    padding: 1.75rem;
+    border-radius: 18px;
+    box-shadow: var(--shadow-md);
+}
+
+.meettheteam {
+    text-align: center;
+    box-sizing: border-box;
+    padding: unset;
+}
+
+.samenwerking {
+    padding: unset;
+}
+
+.teamwaarden {
+    padding: unset;
+}
+
+div.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+div.gallery-item {
+  margin: 5px;
+  width: calc(33% - 20px);
+}
+
+div.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+}
+
+.study {
+    color: rgb(180, 180, 180);
+}
+
+div.gallery-item div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  div.gallery-item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  div.gallery-item {
+    width: calc(100% - 20px);
+  }
+}

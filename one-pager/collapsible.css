@@ -1,0 +1,39 @@
+.collapsible-button {
+    background-color: var(--accent-color);
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    border-radius: 12px;
+    width: 80%;
+}
+
+.collapsible-button:after {
+  content: '\02795';
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+/*Added the .active class for JS*/
+.active, .collapsible-button:hover {
+    background-color: #D1C3EB;
+}
+
+.active:after {
+  content: "\2796";
+}
+
+.collapsible-content {
+    padding: 0 18px 0 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    width: 80%;
+    margin-bottom: 10px;
+}
