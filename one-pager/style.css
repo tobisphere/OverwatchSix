@@ -815,29 +815,6 @@ https://templatemo.com/tm-593-personal-shape
             width: 100%;
         }
 
-        /* Partners Logos */
-        .partners-logos {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 4rem;
-            margin-top: 4rem;
-            align-items: center;
-            justify-items: center;
-        }
-
-        .partners-logos img {
-            max-width: 180px;
-            height: auto;
-            filter: grayscale(100%);
-            opacity: 0.8;
-            transition: all 0.3s ease;
-        }
-
-        .partners-logos img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.05);
-        }
 
         /* Responsive */
         @media (max-width: 900px) {
@@ -968,13 +945,14 @@ https://templatemo.com/tm-593-personal-shape
             color: var(--text-light);
         }
 
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #3b4cb8 0%, #4a2c65 50%, #9c35a8 100%);
-            color: var(--text-light);
-            position: relative;
-            overflow: hidden;
-        }
+/* Contact Section */
+.contact {
+    height: 200px;
+    background: linear-gradient(135deg, #3b4cb8 0%, #4a2c65 50%, #9c35a8 100%);
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+}
 
         .contact::before {
             content: '';
@@ -1422,4 +1400,59 @@ https://templatemo.com/tm-593-personal-shape
     .scope-grid {
         grid-template-columns: 1fr;
     }
+}
+/* Partners */
+.partners {
+    text-align: center;
+    box-sizing: border-box;
+    padding: unset;
+}
+
+.partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partner-logo {
+    padding: 0 60px;
+    position: relative;
+}
+
+/* haal border-right weg, gebruik alleen deze lijn */
+.partner-logo:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 120px;
+    width: 2px;
+    background: #ccc;
+}
+
+.partner-logo img {
+    object-fit: contain;
+}
+
+/* algemene logo styling */
+.partners-logos img {
+    max-width: 250px;
+    height: auto;
+    max-height: 90px;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+/* kleinere vierkante logos */
+.partner-logo-square img {
+    max-width: 140px;
+    max-height: 140px;
+}
+
+.partners-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
 }
