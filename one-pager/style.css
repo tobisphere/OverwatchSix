@@ -196,6 +196,21 @@ nav.scrolled {
     letter-spacing: -0.5px;
 }
 
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.logo {
+    margin-left: -5rem; /* schuift logo iets verder naar links */
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -592,6 +607,9 @@ nav.scrolled {
 }
 
 /* Section Styles */
+section {
+    padding: 8rem 0;
+}
 
 .container {
     max-width: 1400px;
@@ -670,9 +688,6 @@ nav.scrolled {
     opacity: 0.7;
 }
 
-.about-image::after {
-
-}
 
 .about-text h3 {
     font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
@@ -733,63 +748,76 @@ nav.scrolled {
     gap: 5rem;
 }
 
-.situatie-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: stretch; /* DIT is de fix */
-    margin-top: 3rem;
-}
-
-.situatie-kolom {
-    background: var(--bg-card);
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow-md);
-    display: flex;              /* BELANGRIJK */
-    flex-direction: column;     /* BELANGRIJK */
-}
 /* Ontwerpvraag */
 .ontwerpvraag {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 4rem auto;
+    margin: 0 auto 4rem;
 }
 
-.ontwerpvraag h3 {
-    font-size: 2rem;
+.ontwerpvraag h2 {
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(99,102,241,1), rgba(139,92,246,1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .ontwerpvraag p {
     font-size: 1.2rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     line-height: 1.8;
+}
+
+/* Situatie kolommen */
+.situatie-columns {
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Titel boven card */
+.situatie-kolom h2,
+.productvisie-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* Card container */
+.card-content {
+    background: var(--bg-card);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Tekst in card */
+.card-content p {
+    margin: 0;
+    line-height: 1.8;
+    max-width: 100%;
 }
 
 /* Productvisie titel */
 .productvisie-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-}
-
-
-.situatie-kolom h4 {
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-}
-
-.situatie-kolom h5 {
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+
+    background: linear-gradient(135deg, rgba(99,102,241,1), rgba(139,92,246,1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.situatie-kolom p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-}
+
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -800,7 +828,6 @@ nav.scrolled {
 .sprint-block {
     width: 100%;
 }
-
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -933,7 +960,6 @@ nav.scrolled {
 
 /* Contact Section */
 .contact {
-    height: 200px;
     background: linear-gradient(135deg, #3b4cb8 0%, #4a2c65 50%, #9c35a8 100%);
     color: var(--text-light);
     position: relative;
