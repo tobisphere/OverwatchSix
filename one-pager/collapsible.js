@@ -7,10 +7,8 @@ for (i = 0; i < coll.length; i++) {
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
-      content.style.padding = 0;
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
-      content.style.padding = 30 + "px";
     }
   });
 }

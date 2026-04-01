@@ -21,27 +21,30 @@
 }
 
 .collapsible-button.sprints {
-  background-color: rgb(172, 134, 239);
+  background-color: white;
+  left: 550px;
+  top: 1100px;
+  justify-content: center;
   color: #444;
   cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
+  padding: 10px;
+  width: 20%;
   text-align: center;
   outline: none;
   font-size: 50px;
-  border-radius: 190px;
-  width: 18%;
-  height: 240px;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  margin-bottom: 20px;
 }
 
 .collapsible-button.sprints:after {
-  content: none;
+  content: "\27A4";
+  
 }
 
 /*Added the .active class for JS*/
 .active, .collapsible-button:hover {
-    background-color: #D1C3EB;
+    background-color: #ffffff;
 }
 
 .active:after {
@@ -49,7 +52,7 @@
 }
 
 .collapsible-button.active {
-  height: 100px;
+  content: "\2796";
 }
 
 .collapsible-content {
@@ -63,8 +66,5 @@
 
 .collapsible-content.sprints {
   padding: 0px;
-  margin-top: -80px;
-  margin-left: -50px;
-  background-color: rgb(172, 134, 239);
-  border-radius: 100px;
+  margin-top: -60px;
 }
