@@ -22,10 +22,10 @@
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#productvisie">Intro</a></li>
+            <li><a href="#proces">Sprints</a></li>
+            <li><a href="#partners">Partners</a></li>
             <li><a href="#team">Team</a></li>
-            <li><a href="#sprints">Sprints</a></li>
-            <li><a target="_blank" href="https://github.com/users/tobisphere/projects/2">Backlog</a></li>
-            <li><a target="_blank" href="https://github.com/users/tobisphere/projects/2/views/4">Sprintplanning</a></li>
         </ul>
         <div class="mobile-menu-toggle" id="mobileMenuToggle">
             <div class="hamburger"></div>
@@ -39,10 +39,10 @@
 <div class="mobile-menu" id="mobileMenu">
     <ul class="mobile-nav-links">
         <li><a href="#home">Home</a></li>
+        <li><a href="#productvisie">Intro</a></li>
+        <li><a href="#proces">Sprints</a></li>
+        <li><a href="#partners">Partners</a></li>
         <li><a href="#team">Team</a></li>
-        <li><a href="#sprints">Sprints</a></li>
-        <li><a target="_blank" href="https://github.com/users/tobisphere/projects/2">Backlog</a></li>
-        <li><a target="_blank" href="https://github.com/users/tobisphere/projects/2/views/4">Sprintplanning</a></li>
     </ul>
 </div>
 
@@ -119,238 +119,203 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="collapsible-button sprints">Sprint 0
-                <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.75 16.125L21.5 26.875L32.25 16.125" stroke="#0A0A0A" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <div class="collapsible-content sprints" id="sprints">
-                <div class="sprint-block">
-                    <h2 class="section-title fade-in">Randvoorwaarden</h2>
-                        <div class="req-grid">
-                            <div class="req-card">
-                                <h4>Technische randvoorwaarden</h4>
-                                <ul>
-                                    <li>Het product moet aansluiten op de infrastructuur van het Open Urban Platform en voldoen aan de open standaarden die zij hanteren voor data-uitwisseling.</li>
-                                    <li>De gebruikte data moeten compatibel zijn met het ecosysteem van Open Urban Platform.</li>
-                                    <li>De applicatie moet schaalbaar zijn zodat er in de toekomst op kan worden doorgebouwd.</li>
-                                    <li>De oplossing moet digitaal toegankelijk zijn.</li>
-                                    <li>De applicatie moet gebruiksvriendelijk zijn voor gebruikers en developers die de data willen gebruiken of uitbreiden.</li>
-                                    <li>De gegenereerde data moet gestructureerd en veilig opgeslagen kunnen worden voor vervolgonderzoek.</li>
-                                    <li>Het product moet rekening houden met de WCAG-regels.</li>
-                                    <li>Het product moet zo laagdrempelig mogelijk zijn voor de gebruiker/doelgroep.</li>
-                                    <li>De game geeft een accurate weergave van 17e-eeuws Rotterdam.</li>
-                                </ul>
-                            </div>
+            <section class="proces-section" id="proces">
+                <h2 class="proces-title">Proces</h2>
 
-                            <div class="req-card">
-                                <h4>Juridische randvoorwaarden</h4>
-                                <ul>
-                                    <li>Het product moet voldoen aan de geldende privacywetgeving (AVG).</li>
-                                    <li>Persoonsgegevens mogen alleen worden verzameld wanneer dit noodzakelijk is en met expliciete toestemming.</li>
-                                    <li>Historisch beeldmateriaal en archiefdata moeten volgens de gebruiksrechten van het Stadsarchief worden ingezet.</li>
-                                    <li>Data moet voldoen aan de open data standaarden van het Open Urban Platform.</li>
-                                </ul>
-                            </div>
+                <!-- Sprint 0 -->
+                <button type="button" class="proces-item active" data-target="sprint0-content">
+                    <span>Sprint 0</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
 
-                            <div class="req-card">
-                                <h4>Organisatorische randvoorwaarden</h4>
-                                <ul>
-                                    <li>Het product moet aansluiten bij de educatieve doelstelling van het Stadsarchief Rotterdam.</li>
-                                    <li>Het concept moet passen binnen de visie van Gemeente Rotterdam / Citiverse om stedelijke data te combineren in een virtuele omgeving.</li>
-                                    <li>Het eindproduct moet overdraagbaar zijn zodat toekomstige studenten of teams verder kunnen werken of doorontwikkelen.</li>
-                                </ul>
-                            </div>
+                <div class="proces-panel open" id="sprint0-content">
+                    <div class="proces-detail sprint0-detail">
+                        <div class="proces-tabs">
+                            <button class="proces-tab active" data-tab="sprintdoel">Sprint doel</button>
+                            <button class="proces-tab" data-tab="hackathon">Hackathon</button>
+                            <button class="proces-tab" data-tab="scope">Scope</button>
+                            <button class="proces-tab" data-tab="nextsteps">Next steps</button>
+                        </div>
 
-                            <div class="req-card">
-                                <h4>Budgettaire en tijdsgebonden randvoorwaarden</h4>
-                                <ul>
-                                    <li>Het project moet gerealiseerd worden binnen de beschikbare projectperiode.</li>
-                                    <li>De oplossing moet haalbaar zijn binnen een studentenproject.</li>
-                                    <li>De technologie moet realistisch implementeerbaar zijn binnen de beschikbare middelen die wij hebben of krijgen.</li>
-                                </ul>
-                            </div>
+                        <div class="proces-tab-content active" data-content="sprintdoel">
+                            <div class="proces-content-box">
 
-                            <div class="req-card">
-                                <h4>Inhoudelijke randvoorwaarden</h4>
-                                <ul>
-                                    <li>De content moet gebaseerd zijn op betrouwbare data uit het Stadsarchief.</li>
-                                    <li>De toepassing moet educatief en interactief zijn.</li>
-                                    <li>De doelgroep moet centraal staan in onze ontwerpkeuzes.</li>
-                                    <li>De oplossing moet bijdragen aan participatie en betrokkenheid van de doelgroep.</li>
-                                    <li>Het product moet nieuwe data verzamelen, maar deze data moet betrouwbaar en correct blijven.</li>
-                                </ul>
+                                <h3>Sprint doel</h3>
+
+                                <p>
+                                    In sprint 0 hebben we een eerste onepager ontwikkeld die dient als basis voor het project.
+                                    Dit vormt het startpunt waarmee we in de volgende sprints verder kunnen werken.
+                                </p>
+
+                                <p>
+                                    Het doel van deze sprint was om een duidelijk startpunt te creëren en de richting van het project vast te leggen,
+                                    zodat we dit in de komende sprints verder kunnen uitwerken en verbeteren.
+                                </p>
+
                             </div>
                         </div>
-                    </div>
-                    <div class="sprint-block next-steps">
-                        <h2 class="section-title fade-in">Next Steps</h2>
 
-                        <div class="next-steps-grid">
-                            <div class="next-step-column">
-                                <h3>Onderzoek & Analyse</h3>
-                                <ul>
-                                    <li>Doelgroepanalyse 16–35 jaar uitvoeren</li>
-                                    <li>Desk- en fieldresearch met jongeren en volwassenen</li>
-                                    <li>Stakeholderwaarden en impact in kaart brengen</li>
-                                    <li>Huidige situatie van Stadsarchief, Open Urban Platform en Citiverse analyseren</li>
-                                    <li>Data- en privacy-eisen checken (AVG, Open Urban Platform standaarden)</li>
-                                </ul>
+                        <div class="proces-tab-content" data-content="hackathon">
+                            <div class="proces-content-box">
+                                <p>
+                                    Tijdens de hackathon hebben we in korte tijd ideeën verkend, eerste concepten besproken
+                                    en gekeken welke richting het beste aansluit bij het Schielandshuis en de doelgroep.
+                                </p>
                             </div>
+                        </div>
 
-                            <div class="next-step-column">
-                                <h3>Concept & Ontwerp</h3>
-                                <ul>
-                                    <li>Productvisie en ontwerpvraag finaliseren</li>
-                                    <li>Interactieve, educatieve concepten ontwikkelen</li>
-                                    <li>Concepten afstemmen op doelgroepbeleving en stakeholderdoelen</li>
-                                    <li>Inclusiviteit, creativiteit en privacy integreren in het ontwerp</li>
-                                    <li>Low-fidelity schetsen en mockups maken</li>
-                                </ul>
+                        <div class="proces-tab-content" data-content="scope">
+                            <div class="proces-scope-grid">
+
+                                <div class="scope-card in-scope">
+                                    <h3><span class="scope-icon">✔</span> In-scope</h3>
+                                    <ul>
+                                        <li>Doelgroeponderzoek onder jongeren en volwassenen</li>
+                                        <li>Analyse van archief- en stedelijke data</li>
+                                        <li>Conceptontwikkeling van een interactieve ervaring</li>
+                                        <li>Prototype ontwerp en gebruikerstesten</li>
+                                        <li>Feedback verzamelen van burgers en stakeholders</li>
+                                        <li>Documenteren van het ontwikkelproces</li>
+                                    </ul>
+                                </div>
+
+                                <div class="scope-card out-scope">
+                                    <h3><span class="scope-icon">✖</span> Out-of-scope</h3>
+                                    <ul>
+                                        <li>Volledig technisch eindproduct</li>
+                                        <li>Internationale uitrol of commercieel model</li>
+                                        <li>Complexe systeemintegraties</li>
+                                        <li>Langetermijnonderhoud na oplevering</li>
+                                        <li>Complete inclusiviteit voor doelgroep</li>
+                                    </ul>
+                                </div>
+
+                                <div class="scope-card constraints">
+                                    <h3><span class="scope-icon">!</span> Constraints</h3>
+                                    <ul>
+                                        <li>Projectduur van 10 weken / 5 sprints</li>
+                                        <li>Beperkte middelen binnen een studentenproject</li>
+                                        <li>Beschikbaarheid en kwaliteit van data</li>
+                                        <li>AVG en privacywetgeving</li>
+                                        <li>Technische haalbaarheid</li>
+                                    </ul>
+                                </div>
+
                             </div>
+                        </div>
 
-                            <div class="next-step-column">
-                                <h3>Prototype & Testen</h3>
-                                <ul>
-                                    <li>Prototype bouwen (VR/AR/3D)</li>
-                                    <li>Gebruikerstesten met doelgroep uitvoeren</li>
-                                    <li>Feedback verzamelen en iteratief verwerken</li>
-                                    <li>Veiligheids- en privacymaatregelen testen</li>
-                                    <li>Eindproduct voorbereiden voor presentatie en expo</li>
-                                </ul>
+                        <div class="proces-tab-content" data-content="nextsteps">
+                            <div class="proces-content-box">
+                                <div class="proces-columns">
+                                    <div class="proces-column">
+                                        <h3>Onderzoek &amp; Analyse</h3>
+                                        <ul>
+                                            <li>Doelgroepanalyse 16–35 jaar uitvoeren</li>
+                                            <li>Desk- en fieldresearch met jongeren en volwassenen</li>
+                                            <li>Stakeholderwaarden en impact in kaart brengen</li>
+                                            <li>Huidige situatie van Stadsarchief, Open Urban Platform en Citiverse analyseren</li>
+                                            <li>Data- en privacy-eisen checken (AVG, Open Urban Platform standaarden)</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="proces-column">
+                                        <h3>Concept &amp; Ontwerp</h3>
+                                        <ul>
+                                            <li>Productvisie en ontwerpvraag finaliseren</li>
+                                            <li>Interactieve, educatieve concepten ontwikkelen</li>
+                                            <li>Concepten afstemmen op doelgroepbeleving en stakeholderdoelen</li>
+                                            <li>Inclusiviteit, creativiteit en privacy integreren in ontwerp</li>
+                                            <li>Low-fidelity schetsen en mockups maken</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="proces-column">
+                                        <h3>Prototype &amp; Testen</h3>
+                                        <ul>
+                                            <li>Prototype bouwen (VR/AR/3D)</li>
+                                            <li>Gebruikerstesten met doelgroep uitvoeren</li>
+                                            <li>Feedback verzamelen en iteratief verwerken</li>
+                                            <li>Veiligheids- en privacymaatregelen testen</li>
+                                            <li>Eindproduct voorbereiden voor presentatie en expo</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <button type="button" class="collapsible-button sprints">Sprint 1 
-                <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.75 16.125L21.5 26.875L32.25 16.125" stroke="#0A0A0A" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <div class="collapsible-content sprints" id="sprints">
-                <h2>Sprint goal</h2>
-                <p>Inzicht verkrijgen in de doelgroep, motivatie en technische mogelijkheden 
-                    om een interactieve en educatieve ervaring te ontwikkelen.</p>
-                <h2>Deskresearch</h2>
-                <p>Interesse en barrières</p>
-                <ul>
-                    <li>Jongeren (16–30) zijn geïnteresseerd in lokale geschiedenis,
-                        vooral wanneer deze visueel en interactief wordt aangeboden</li>
-                    <li>Praktische barrières zoals kosten en bereikbaarheid beperken deelname</li>
-                </ul>
-                <h2>Digitale gedragingen</h2>
-                <ul>
-                    <li>95% van Gen Z gebruikt social media als belangrijkste bron voor informatie, 
-                        entertainment en leren</li>
-                    <li>Voorkeur ligt bij korte, visuele content (TikTok, Instagram, YouTube)</li>
-                    <li>Jongeren consumeren informatie vooral via snelle en interactieve formats</li>
-                </ul>
-                <p>Dit betekent dat de ervaring visueel, laagdrempelig en interactief moet zijn.</p>
-                <p>Wat werkt voor historische beleving</p>
-                <ul>
-                    <li>VR/AR maakt geschiedenis ervaarbaar in plaats van abstract</li>
-                    <li>Storytelling en gamification verhogen betrokkenheid</li>
-                    <li>Jongeren willen interactie, invloed en keuzevrijheid</li>
-                </ul>
-                <p>Dit betekent dat de gebruiker actief keuzes moet kunnen maken en invloed heeft 
-                    op het verloop van de ervaring.</p>
-                <h2>Motivatie (Self Determination Theory)</h2>
-                <ul>
-                    <li>Intrinsieke en extrinsieke motivatie spelen een rol bij betrokkenheid</li>
-                </ul>
-                <p>Betrokkenheid wordt vergroot door:</p>
-                <ol>
-                    <li>Autonomie: zelf keuzes maken</li>
-                    <li>Competentie: gevoel iets te leren of te bereiken</li>
-                    <li>Verbondenheid: samen beleven of delen met anderen</li>
-                </ol>
-                <p>Dit betekent dat de ervaring niet alleen informatief moet zijn, 
-                    maar ook persoonlijk en interactief.</p>
-                <h2>Multicultureel & inclusief</h2>
-                <li>Rotterdam behoort tot de top 3 meest diverse steden van Nederland</li> 
-                <li>Meer dan 170 nationaliteiten</li>
-                <li>Grote invloed van expats en internationale werkplekken</li>
-                <p>Dit betekent dat de ervaring toegankelijk en herkenbaar moet zijn voor een diverse doelgroep.</p>
-                <h2>Technisch onderzoek</h2>
-                <h3>NLP feedback forum & API data collection </h3>
-                <ul>
-                    <li>Mogelijkheid om feedback van gebruikers en burgers te verzamelen</li>  
-                    <li>Toepassing van NLP om sentiment, onderwerpen en patronen te analyseren</li>
-                    <li>API-koppelingen maken het mogelijk om data te verzamelen en hergebruiken</li>
-                    <li>Draagt bij aan een betere connectie tussen gebruiker en systeem</li>
-                    <li>Biedt mogelijkheden voor toekomstige uitbreiding en doorontwikkeling</li>
-                </ul>
-                <h3>Tools & engines</h3>
-                <p>Godot</p>
-                <p>Voor het ontwikkelen van een interactieve 3D of VR ervaring</p>
-                <p>Three.js</p>
-                <p>Voor het ontwikkelen van webgebaseerde 3D omgevingen en visualisaties</p>
-                <p>AR.js</p>
-                <p>Voor het toepassen van augmented reality in de browser, bijvoorbeeld via QR-codes</p>
-                <p>Blender</p>
-                <p>Voor het maken en bewerken van 3D modellen voor de digitale omgeving</p>
-                <p>Koppeling naar concept 
-            De inzichten uit deskresearch vormen de basis voor het ontwerpen van een interactieve en immersieve ervaring. 
-            De focus ligt op beleving, interactie en toegankelijkheid voor de doelgroep. </p>
-                <br />
-                <br />
-            </div>
 
-            <div class="sprint-block" style="margin-top: 200px;">
-                <h2 class="section-title fade-in">Scope</h2>
-
-                <div class="scope-grid">
-                    <div class="scope-card in-scope">
-                        <div class="scope-header">
-                            <span class="scope-icon">✓</span>
-                            <h4>In-scope</h4>
-                        </div>
-                        <ul>
-                            <li>Doelgroeponderzoek onder jongeren en volwassenen</li>
-                            <li>Analyse van archief- en stedelijke data</li>
-                            <li>Conceptontwikkeling van een interactieve ervaring</li>
-                            <li>Prototype ontwerp en gebruikerstesten</li>
-                            <li>Feedback verzamelen van burgers en stakeholders</li>
-                            <li>Documenteren van het ontwikkelproces</li>
-                        </ul>
-                    </div>
-
-                    <div class="scope-card out-scope">
-                        <div class="scope-header">
-                            <span class="scope-icon">✕</span>
-                            <h4>Out-of-scope</h4>
-                        </div>
-                        <ul>
-                            <li>Volledig technisch eindproduct</li>
-                            <li>Internationale uitrol of commercieel model</li>
-                            <li>Complexe systeemintegraties</li>
-                            <li>Langetermijnonderhoud na oplevering</li>
-                            <li>Complete inclusiviteit voor onze doelgroepen</li>
-                        </ul>
-                    </div>
-
-                    <div class="scope-card constraints">
-                        <div class="scope-header">
-                            <span class="scope-icon">!</span>
-                            <h4>Constraints</h4>
-                        </div>
-                        <ul>
-                            <li>Projectduur van 10 weken / 5 sprints</li>
-                            <li>Beperkte middelen binnen een studentenproject</li>
-                            <li>Beschikbaarheid en kwaliteit van data</li>
-                            <li>AVG en privacywetgeving</li>
-                            <li>Technische haalbaarheid en platformstandaarden</li>
-                        </ul>
+                <!-- Sprint 1 -->
+                <button type="button" class="proces-item" data-target="sprint1-content">
+                    <span>Sprint 1</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="proces-panel" id="sprint1-content">
+                    <div class="proces-content-box">
+                        <p>Hier komt straks de inhoud van Sprint 1.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+
+                <!-- Sprint 2 -->
+                <button type="button" class="proces-item" data-target="sprint2-content">
+                    <span>Sprint 2</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="proces-panel" id="sprint2-content">
+                    <div class="proces-content-box">
+                        <p>Hier komt straks de inhoud van Sprint 2.</p>
+                    </div>
+                </div>
+
+                <!-- Sprint 3 -->
+                <button type="button" class="proces-item" data-target="sprint3-content">
+                    <span>Sprint 3</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="proces-panel" id="sprint3-content">
+                    <div class="proces-content-box">
+                        <p>Hier komt straks de inhoud van Sprint 3.</p>
+                    </div>
+                </div>
+
+                <!-- Sprint 4 -->
+                <button type="button" class="proces-item proces-item-light" data-target="sprint4-content">
+                    <span>Sprint 4</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="proces-panel" id="sprint4-content">
+                    <div class="proces-content-box">
+                        <p>Hier komt straks de inhoud van Sprint 4.</p>
+                    </div>
+                </div>
+
+                <!-- Sprint 5 -->
+                <button type="button" class="proces-item proces-item-light" data-target="sprint5-content">
+                    <span>Sprint 5</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="proces-panel" id="sprint5-content">
+                    <div class="proces-content-box">
+                        <p>Hier komt straks de inhoud van Sprint 5.</p>
+                    </div>
+                </div>
+            </section>
+
 
     <!-- Partners Section -->
-    <section class="container partners">
+            <section class="container partners" id="partners">
         <section class="partners" style="padding-top: 0;">
         <h2 class="section-title fade-in">Partners</h2>
         <div class="partners-logos">
@@ -517,7 +482,54 @@
         </div>
     </footer>
 
-<script src="templatemo-personal-javascripts.js"></script>
-<script src="collapsible.js"></script>
+            <script src="templatemo-personal-javascripts.js"></script>
+            <script src="collapsible.js"></script>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Sprint open/dicht
+                    const procesButtons = document.querySelectorAll(".proces-item, .proces-item-light");
+
+                    procesButtons.forEach((button) => {
+                        button.addEventListener("click", function () {
+                            const targetId = this.dataset.target;
+                            const panel = document.getElementById(targetId);
+
+                            const isOpen = panel.classList.contains("open");
+
+                            document.querySelectorAll(".proces-panel").forEach((p) => p.classList.remove("open"));
+                            document.querySelectorAll(".proces-item, .proces-item-light").forEach((b) => b.classList.remove("active"));
+
+                            if (!isOpen) {
+                                panel.classList.add("open");
+                                this.classList.add("active");
+                            }
+                        });
+                    });
+
+                    // Tabs binnen Sprint 0
+                    const tabButtons = document.querySelectorAll(".proces-tab");
+
+                    tabButtons.forEach((tab) => {
+                        tab.addEventListener("click", function () {
+                            const tabName = this.dataset.tab;
+                            const detail = this.closest(".proces-detail");
+
+                            detail.querySelectorAll(".proces-tab").forEach((btn) => btn.classList.remove("active"));
+                            this.classList.add("active");
+
+                            detail.querySelectorAll(".proces-tab-content").forEach((content) => {
+                                content.classList.remove("active");
+                            });
+
+                            const targetContent = detail.querySelector(`.proces-tab-content[data-content="${tabName}"]`);
+                            if (targetContent) {
+                                targetContent.classList.add("active");
+                            }
+                        });
+                    });
+                });
+            </script>
+
 </body>
 </html>

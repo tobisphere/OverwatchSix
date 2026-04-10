@@ -25,14 +25,14 @@
 }
 
 div.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 div.gallery-item {
-  margin: 5px;
-  width: calc(33% - 20px);
+    margin: 5px;
+    width: calc(33% - 20px);
 }
 
 div.gallery-item img {
@@ -49,20 +49,20 @@ div.gallery-item img {
 }
 
 div.gallery-item div.desc {
-  padding: 15px;
-  text-align: center;
+    padding: 15px;
+    text-align: center;
 }
 
 @media only screen and (max-width: 768px) {
-  div.gallery-item {
-    width: calc(50% - 20px);
-  }
+    div.gallery-item {
+        width: calc(50% - 20px);
+    }
 }
 
 @media only screen and (max-width: 480px) {
-  div.gallery-item {
-    width: calc(100% - 20px);
-  }
+    div.gallery-item {
+        width: calc(100% - 20px);
+    }
 }
 
 /* kaart */
@@ -99,16 +99,40 @@ div.gallery-item div.desc {
 
 /* achterkant */
 .card-back {
-    background: #D1C3EB;
+    background: rgba(158, 97, 145, 0.9);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: rotateY(180deg);
+    padding: 1.2rem;
+    gap: 0.4rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(158, 97, 145, 0.25);
+    text-align: center;
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotateY(180deg);
 }
 
 .name {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
 }
+
+.study {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.card-back p:last-child {
+    font-size: 0.85rem;
+    opacity: 0.75;
+    margin-top: 0.4rem;
+}
+
+
