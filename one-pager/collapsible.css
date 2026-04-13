@@ -87,3 +87,22 @@
   font-size: 15px;
   margin: 0;
 }
+/*Aanpassing voor de minecraft afbeelding */
+
+.prototype-image {
+    text-align: center;
+}
+
+.prototype-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px; /* 🔥 dit maakt de hoeken rond */
+    display: block;
+    margin: 0 auto;
+}
+
+.image-caption {
+    max-width: 400px;   /* zelfde breedte als image */
+    margin: 8px auto 0; /* centreert de caption */
+    text-align: center;
+}
