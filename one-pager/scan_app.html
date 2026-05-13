@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="scan_app.css" rel="stylesheet">
+    <title>Camera App</title>
+</head>
+<body>
+    <h1>Camera App</h1>
+    <video id="video" autoplay></video>
+    <br>
+    <button id="captureBtn">Take Picture</button>
+    <button id="retakeBtn" style="display: none;">Retake</button>
+    <br>
+    <canvas id="canvas"></canvas>
+    <img id="capturedImage" style="display: none;" alt="Captured Image">
+
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const captureBtn = document.getElementById('captureBtn');
+        const retakeBtn = document.getElementById('retakeBtn');
+        const capturedImage = document.getElementById('capturedImage');
+
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error('Error accessing camera:', err);
+                alert('Unable to access camera. Please ensure you have granted permission.');
+            });
+
+        captureBtn.addEventListener('click', () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            ctx.drawImage(video, 0, 0);
+            const dataURL = canvas.toDataURL('image/png');
+            capturedImage.src = dataURL;
+            capturedImage.style.display = 'block';
+            video.style.display = 'none';
+            captureBtn.style.display = 'none';
+            retakeBtn.style.display = 'inline';
+        });
+
+        retakeBtn.addEventListener('click', () => {
+            capturedImage.style.display = 'none';
+            video.style.display = 'block';
+            captureBtn.style.display = 'inline';
+            retakeBtn.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
