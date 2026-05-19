@@ -11,10 +11,9 @@
     <video id="video" autoplay></video>
     <br>
     <button id="captureBtn">Take Picture</button>
-    <button id="replaceBtn" style="display: none;">Replace Last Photo</button>
-    <button id="addBtn" style="display: none;">Add Another Photo</button>
+    <button id="confirmBtn" style="display: none;">Confirm Upload</button>
+    <button id="retakeBtn" style="display: none;">Retake</button>
     <br>
-    <p id="queueInfo">Upload queue: 0 / 10</p>
     <canvas id="canvas"></canvas>
     <img id="capturedImage" style="display: none;" alt="Captured Image">
 
@@ -23,61 +22,30 @@
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         const captureBtn = document.getElementById('captureBtn');
+        const confirmBtn = document.getElementById('confirmBtn');
+        const retakeBtn = document.getElementById('retakeBtn');
         const capturedImage = document.getElementById('capturedImage');
-        const replaceBtn = document.getElementById('replaceBtn');
-        const addBtn = document.getElementById('addBtn');
-        const queueInfo = document.getElementById('queueInfo');
 
-        const maxQueueSize = 10; // pas dit getal aan voor een andere queue lengte
-        const uploadQueue = [];
-        let pendingReplace = false;
+        // bewaar de laatste gemaakte foto totdat de gebruiker bevestigt
+        let currentBlob = null;
 
         function showCaptureControls() {
             capturedImage.style.display = 'none';
             video.style.display = 'block';
             captureBtn.style.display = 'inline';
-            replaceBtn.style.display = 'none';
-            addBtn.style.display = 'none';
+            confirmBtn.style.display = 'none';
+            retakeBtn.style.display = 'none';
+            currentBlob = null;
         }
 
-        function showActionButtons() {
-            replaceBtn.style.display = 'inline';
-            addBtn.style.display = 'inline';
+        // de knoppen om de foto te bevestigen of opnieuw te maken
+        function showReviewButtons() {
+            confirmBtn.style.display = 'inline';
+            retakeBtn.style.display = 'inline';
             captureBtn.style.display = 'none';
         }
 
-        function setPendingReplace(replaceMode) {
-            pendingReplace = replaceMode;
-            showCaptureControls();
-        }
-
-        function updateQueueInfo() {
-            queueInfo.textContent = `Upload queue: ${uploadQueue.length} / ${maxQueueSize}`;
-        }
-
-        function addToQueue(blob) {
-            if (!blob) {
-                console.error('Geen blob ontvangen om toe te voegen aan de queue.');
-                return;
-            }
-
-            if (uploadQueue.length >= maxQueueSize) {
-                uploadQueue.shift();
-                console.log('Oudste foto uit queue verwijderd om ruimte te maken.');
-            }
-
-            uploadQueue.push(blob);
-            updateQueueInfo();
-        }
-
-        function replaceLastPhoto(blob) {
-            if (uploadQueue.length > 0) {
-                uploadQueue.pop();
-                console.log('Laatste foto uit queue verwijderd om te vervangen.');
-            }
-            addToQueue(blob);
-        }
-
+        // Upload de foto pas als de gebruiker heeft bevestigd
         async function uploadPhoto(blob) {
             if (!blob) {
                 return;
@@ -95,10 +63,10 @@
             try {
                 // stuur naar de api
                 const response = await fetch(
-                    'https://raspberrypi.tail1480d1.ts.net/api/upload', 
+                    'https://raspberrypi.tail1480d1.ts.net/api/upload',
                     {
-                    method: 'POST',
-                    body: formData
+                        method: 'POST',
+                        body: formData
                     }
                 );
 
@@ -112,6 +80,7 @@
             }
         }
 
+        // vraag toestemming om de camera te gebruiken
         navigator.mediaDevices.getUserMedia({
             video: { facingMode: 'environment' }
         })
@@ -123,31 +92,37 @@
             alert('Unable to access camera.');
         });
 
+        // maakt een foto
         captureBtn.addEventListener('click', async () => {
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
 
             ctx.drawImage(video, 0, 0);
 
+            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+            currentBlob = blob;
+
             capturedImage.src = canvas.toDataURL('image/png');
             capturedImage.style.display = 'block';
 
             video.style.display = 'none';
-            showActionButtons();
-
-            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-            if (pendingReplace) {
-                replaceLastPhoto(blob);
-                pendingReplace = false;
-            } else {
-                addToQueue(blob);
-            }
-
-            await uploadPhoto(blob);
+            showReviewButtons();
         });
 
-        replaceBtn.addEventListener('click', () => setPendingReplace(true));
-        addBtn.addEventListener('click', () => setPendingReplace(false));
+        // Upload de foto als de gebruiker akkoord is
+        confirmBtn.addEventListener('click', async () => {
+            if (!currentBlob) {
+                return;
+            }
+
+            await uploadPhoto(currentBlob);
+            showCaptureControls();
+        });
+
+        // zet de app terug om opnieuw te maken
+        retakeBtn.addEventListener('click', () => {
+            showCaptureControls();
+        });
     </script>
 
 </body>
