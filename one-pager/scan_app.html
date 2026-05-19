@@ -24,33 +24,73 @@
         const retakeBtn = document.getElementById('retakeBtn');
         const capturedImage = document.getElementById('capturedImage');
 
-        navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
-            .then(stream => {
-                video.srcObject = stream;
-            })
-            .catch(err => {
-                console.error('Error accessing camera:', err);
-                alert('Unable to access camera. Please ensure you have granted permission.');
-            });
+        navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "environment" }
+        })
+        .then(stream => {
+            video.srcObject = stream;
+        })
+        .catch(err => {
+            console.error('Error accessing camera:', err);
+            alert('Unable to access camera.');
+        });
 
-        captureBtn.addEventListener('click', () => {
+        captureBtn.addEventListener('click', async () => {
+
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
+
             ctx.drawImage(video, 0, 0);
-            const dataURL = canvas.toDataURL('image/png');
-            capturedImage.src = dataURL;
+
+            capturedImage.src = canvas.toDataURL('image/png');
             capturedImage.style.display = 'block';
+
             video.style.display = 'none';
             captureBtn.style.display = 'none';
             retakeBtn.style.display = 'inline';
+
+            // Canvas -> Blob
+            canvas.toBlob(async (blob) => {
+
+                // Maak upload object
+                const formData = new FormData();
+
+                // Voeg bestand toe
+                formData.append(
+                    'file', // naam van veld
+                    blob, // de afbeelding
+                    'photo.png' // bestandsnaam
+                );
+
+                // stuur naar de api
+                const response = await fetch(
+                    'API_URL',
+                    {
+                        method: 'POST',
+                        body: formData
+                    }
+                );
+
+                // Check of het is gelukt
+                console.log('Verstuurd!');
+
+            }, 'image/png');
+
+
         });
 
         retakeBtn.addEventListener('click', () => {
+
             capturedImage.style.display = 'none';
+
             video.style.display = 'block';
+
             captureBtn.style.display = 'inline';
+
             retakeBtn.style.display = 'none';
+
         });
     </script>
+
 </body>
 </html>
