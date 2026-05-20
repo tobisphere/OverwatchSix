@@ -8,6 +8,12 @@
 </head>
 <body>
     <h1>Camera App</h1>
+
+    <div id="languageSwitcher" style="margin-bottom: 16px;">
+        <button id="langBtnEN">English</button>
+        <button id="langBtnNL">Nederlands</button>
+    </div>
+
     <video id="video" autoplay></video>
     <br>
     <button id="captureBtn">Take Picture</button>
@@ -25,6 +31,41 @@
         const confirmBtn = document.getElementById('confirmBtn');
         const retakeBtn = document.getElementById('retakeBtn');
         const capturedImage = document.getElementById('capturedImage');
+        const langBtnEN = document.getElementById('langBtnEN');
+        const langBtnNL = document.getElementById('langBtnNL');
+
+        // variables in de twee verschillende talen
+        const translations = {
+            en: {
+                title: 'Camera App',
+                capture: 'Take Picture',
+                confirm: 'Confirm picture',
+                retake: 'Retake'
+            },
+            nl: {
+                title: 'Camera App',
+                capture: 'Maak foto',
+                confirm: 'Bevestig foto',
+                retake: 'Opnieuw maken'
+            }
+        };
+
+        // default language
+        let currentLanguage = 'en';
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            const text = translations[lang];
+            document.querySelector('h1').textContent = text.title;
+            captureBtn.textContent = text.capture;
+            confirmBtn.textContent = text.confirm;
+            retakeBtn.textContent = text.retake;
+        }
+
+        langBtnEN.addEventListener('click', () => setLanguage('en'));
+        langBtnNL.addEventListener('click', () => setLanguage('nl'));
+
+        setLanguage(currentLanguage);
 
         // bewaar de laatste gemaakte foto totdat de gebruiker bevestigt
         let currentBlob = null;
