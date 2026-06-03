@@ -2,22 +2,24 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     font-family: 'Times New Roman', Times, serif;
     background-color: #5b7966;
     color: #ffffff;
     overflow: hidden;
     -webkit-user-select: none;
     user-select: none;
+    min-height: -webkit-fill-available;
 }
 
 .app-screen {
     display: none;
     position: relative;
     width: 100%;
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    max-height: calc(var(--vh, 1vh) * 100);
     box-sizing: border-box;
-    padding: 50px 30px;
+    padding: calc(50px + env(safe-area-inset-top, 0px)) 30px calc(50px + env(safe-area-inset-bottom, 0px));
     opacity: 0;
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -42,7 +44,7 @@ body, html {
 }
 
 #screen-home {
-    height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     background-image: url('images/homescreen.jpeg');
     background-size: cover;
     background-position: center;
@@ -56,7 +58,7 @@ body, html {
 }
 
 #screen-intro {
-    height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     background-image: url('images/2ndscreen.jpg');
     background-size: cover;
     background-position: center;
@@ -240,7 +242,7 @@ h1 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 65px;
+    gap: 45px;
     margin-top: 30px;
     padding: 0 10px;
     box-sizing: border-box;
@@ -250,7 +252,6 @@ h1 {
     display: flex;
     align-items: center;
     gap: 30px;
-    transition: opacity 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28), transform 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     opacity: 0;
     transform: translateY(30px);
 }
@@ -259,9 +260,19 @@ h1 {
     display: none !important;
 }
 
+@keyframes whooshAnim {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .step-item.whoosh {
-    opacity: 1;
-    transform: translateY(0);
+    animation: whooshAnim 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
 }
 
 .step-left {
@@ -284,8 +295,8 @@ h1 {
 }
 
 .step-illustration {
-    width: 113px;
-    height: 113px;
+    width: 110px;
+    height: 110px;
     background-color: transparent;
     border-radius: 0;
     overflow: visible;
@@ -557,16 +568,16 @@ h1 {
     }
 
     .steps-container {
-        gap: 85px;
+        gap: 20px;
     }
 
     .step-item {
-        gap: 18px;
+        gap: 14px;
     }
 
     .step-illustration {
-        width: 113px;
-        height: 113px;
+        width: 90px;
+        height: 90px;
     }
 
     .camera-viewfinder {
