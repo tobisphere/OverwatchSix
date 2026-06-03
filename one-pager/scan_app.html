@@ -1,170 +1,453 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="scan_app.css" rel="stylesheet">
-    <title>Camera App</title>
+    <title>De Oude Draden van Rotterdam</title>
 </head>
 <body>
-    <h1>Camera App</h1>
 
-    <div id="languageSwitcher" style="margin-bottom: 16px;">
-        <button id="langBtnEN">English</button>
-        <button id="langBtnNL">Nederlands</button>
+    <div id="screen-home" class="app-screen active">
+        <div class="background-map"></div>
+        <div class="content-wrapper">
+            <h1 data-translate="title">De oude draden van Rotterdam</h1>
+            <p class="subtitle" data-translate="subtitle">Beleef de Rotterdamse 18e eeuw door immersive technologie</p>
+        </div>
+        
+        <div class="language-menu-container">
+            <div id="languageOptions" class="language-options">
+                <button class="lang-btn" data-lang="zh">🇨🇳</button>
+                <button class="lang-btn" data-lang="ja">🇯🇵</button>
+                <button class="lang-btn" data-lang="fr">🇫🇷</button>
+                <button class="lang-btn" data-lang="de">🇩🇪</button>
+                <button class="lang-btn" data-lang="en">🇬🇧</button>
+                <button class="lang-btn" data-lang="nl">🇳🇱</button>
+            </div>
+            <button id="fab-plus" class="btn-round btn-plus">+</button>
+        </div>
+
+        <button class="btn-round btn-next" onclick="navigateTo('screen-intro')">→</button>
     </div>
 
-    <video id="video" autoplay></video>
-    <br>
-    <button id="captureBtn">Take Picture</button>
-    <button id="confirmBtn" style="display: none;">Confirm Upload</button>
-    <button id="retakeBtn" style="display: none;">Retake</button>
-    <br>
-    <canvas id="canvas"></canvas>
-    <img id="capturedImage" style="display: none;" alt="Captured Image">
+    <div id="screen-intro" class="app-screen">
+        <div class="content-wrapper">
+            <h2 data-translate="title" class="serif-title">De oude draden van Rotterdam</h2>
+            <div data-translate="scroll-text" class="scroll-text">
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+            </div>
+        </div>
+        <button class="btn-round btn-next" onclick="navigateTo('screen-steps')">→</button>
+    </div>
 
+    <div id="screen-steps" class="app-screen">
+        <h2 class="screen-title" data-translate="stepTitle">Steps</h2>
+        
+        <div class="steps-container">
+            <div id="step-1" class="step-item hide">
+                <span class="step-number">1</span>
+                <div class="step-illustration img-illustration-1"><img src="images/1step.0.gif" alt="Animatie"></div>
+                <p data-translate="step1">Wees een kunstenaar. Teken jouw eigen schilderij.</p>
+            </div>
+            <div id="step-2" class="step-item hide">
+                <span class="step-number">2</span>
+                <div class="step-illustration img-illustration-2"><img src="images/2step.0.gif" alt="Animatie"></div>
+                <p data-translate="step2">Scan de schilderij in door het maken van een foto via de scna app.</p>
+            </div>
+            <div id="step-3" class="step-item hide">
+                <span class="step-number">3</span>
+                <div class="step-illustration img-illustration-3"><img src="images/3step.0.gif" alt="Animatie"></div>
+                <p data-translate="step3">Ervaar jouw eigen schilderij in de stijlkamer van de broers Bisschop.</p>
+            </div>
+        </div>
+
+        <button id="step-next-btn" class="btn-round btn-next">→</button>
+    </div>
+
+    <div id="screen-camera" class="app-screen">
+        <h2 class="screen-title" data-translate="scanTitle">Scan</h2>
+        
+        <div class="camera-viewfinder">
+            <video id="video" autoplay playsinline></video>
+        </div>
+
+        <div class="camera-controls">
+            <button id="captureBtn" class="btn-capture">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+                    <path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="screen-confirm" class="app-screen">
+        <h2 class="screen-title" data-translate="scanTitle">Scan</h2>
+
+        <div id="review-container">
+            <div class="camera-viewfinder">
+                <canvas id="canvas" style="display: none;"></canvas>
+                <img id="capturedImage" alt="Captured Image">
+            </div>
+            
+            <p class="confirm-question" data-translate="confirmQ">Wilt u deze foto gebruiken ?</p>
+            
+            <div class="confirm-buttons">
+                <button id="confirmBtn" class="btn-rect" data-translate="yes">Yes</button>
+                <button id="retakeBtn" class="btn-rect" data-translate="no">No</button>
+            </div>
+        </div>
+
+        <div id="sure-popup-overlay" class="popup-overlay hide">
+            <div class="white-popup-box">
+                <p class="popup-text" data-translate="sureQ">Weet u het zeker?</p>
+                <div class="popup-buttons">
+                    <button id="sureYesBtn" class="btn-popup-rect" data-translate="yes">Yes</button>
+                    <button id="sureNoBtn" class="btn-popup-rect" data-translate="no">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="status-overlay" class="status-screen-overlay hide">
+            <div class="status-blur-layer"></div> 
+            
+            <div id="status-loading" class="status-content">
+                <div class="custom-chalk-spinner"></div>
+                <p class="status-text" data-translate="loadingText">Een moment geduld...</p>
+            </div>
+
+            <div id="status-success" class="status-content hide">
+                <div class="icon-circle icon-success">✓</div>
+                <p class="status-text" data-translate="successText">Jouw schilderij is goed ontvangen, beleef nu jou eigen kunstwerk in de stijlkamer van de broers Bisschop</p>
+            </div>
+
+            <div id="status-error" class="status-content hide">
+                <div class="icon-circle icon-error">✕</div>
+                <p class="status-text" data-translate="errorText">Helaas past deze tekening niet bij de historische collectie van de Bisschops, dus we kunnen hem niet tonen, maar je mag gerust een nieuwe proberen die beter bij de 18e eeuw past!</p>
+            </div>
+        </div>
+    </div>
+    
     <script>
-        const video = document.getElementById('video');
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        const captureBtn = document.getElementById('captureBtn');
-        const confirmBtn = document.getElementById('confirmBtn');
-        const retakeBtn = document.getElementById('retakeBtn');
-        const capturedImage = document.getElementById('capturedImage');
-        const langBtnEN = document.getElementById('langBtnEN');
-        const langBtnNL = document.getElementById('langBtnNL');
+    const translations = {
+        nl: { 
+            title: "De oude draden van Rotterdam", 
+            subtitle: "Beleef de Rotterdamse 18e eeuw door immersive technologie", 
+            'scroll-text': `Welkom in de stijlvolle kamer van de Bisschops. Hier mag jij de collectie aanvullen met je eigen tekening. Maak je geen zorgen over privacy: we zijn hier puur voor de kunst. 
 
-        // variables in de twee verschillende talen
-        const translations = {
-            en: {
-                title: 'Camera App',
-                capture: 'Take Picture',
-                confirm: 'Confirm picture',
-                retake: 'Retake'
-            },
-            nl: {
-                title: 'Camera App',
-                capture: 'Maak foto',
-                confirm: 'Bevestig foto',
-                retake: 'Opnieuw maken'
-            }
-        };
+            We scannen alleen wat op je papier staat, niet wie jij bent. Geen namen, geen data, niets dat je identificeert. Je tekening wordt tijdelijk digitaal gemaakt om in de projectie te hangen, en daarna is alles weer weg. Je bent de anonieme meester die deze kamer een nieuwe glans geeft.
 
-        // default language
-        let currentLanguage = 'en';
+            Houd er wel rekening mee dat ongepaste tekeningen niet worden tentoongesteld, met als gevolg dat je opnieuw een kunstwerk moet maken.
+
+            Veel plezier, nieuwe kunstenaar!`,
+            stepTitle: "Stappen", 
+            step1: "Wees een kunstenaar. Teken jouw eigen schilderij.", 
+            step2: "Scan de schilderij in door het maken van een foto via de scna app.", 
+            step3: "Ervaar jouw eigen schilderij in de stijlkamer van de broers Bisschop.", 
+            scanTitle: "Scan", 
+            confirmQ: "Wilt u deze foto gebruiken ?",
+            sureQ: "Weet u het zeker?",
+            loadingText: "Een moment geduld...",
+            successText: "Jouw schilderij is goed ontvangen, beleef nu jou eigen kunstwerk in de stijlkamer van de broers Bisschop",
+            errorText: "Helaas past deze tekening niet bij de historische collectie van de Bisschops, dus we kunnen hem niet tonen, maar je mag gerust een nieuwe proberen die beter bij de 18e eeuw past!",
+            yes: "Ja", 
+            no: "Nee" 
+        },
+        en: { 
+            title: "The old threads of Rotterdam", 
+            subtitle: "Experience the 18th century of Rotterdam through immersive technology", 
+            'scroll-text': `Welcome to the elegant room of the Bisschops. Here, you are invited to add your own drawing to the collection. Do not worry about privacy: we are here purely for the art. 
+
+            We only scan what is on your paper, not who you are. No names, no data, nothing that identifies you. Your drawing is temporarily digitized to be displayed in the projection, and afterwards, everything is gone. You are the anonymous master giving this room a new splendor.
+
+            Please keep in mind that inappropriate drawings will not be displayed, which means you will have to create a new piece of art.
+
+            Have fun, new artist!`,
+            stepTitle: "Steps", 
+            step1: "The old threads of Rotterdam", 
+            step2: "The old threads of Rotterdam", 
+            step3: "The old threads of Rotterdam", 
+            scanTitle: "Scan", 
+            confirmQ: "Do you want to use this photo ?", 
+            sureQ: "Are you sure?",
+            loadingText: "One moment please...",
+            successText: "Your drawing has been successfully received, experience your own artwork now in the period room of the Bisschop brothers",
+            errorText: "Unfortunately, this drawing does not match the historical collection of the Bisschops, so we cannot display it, but feel free to try a new one that fits the 18th century better!",
+            yes: "Yes", 
+            no: "No" 
+        },
+        fr: { 
+            title: "Les vieux fils de Rotterdam", 
+            subtitle: "Découvrez le 18ème siècle de Rotterdam grâce à la technologie immersive", 
+            'scroll-text': `Bienvenue dans la chambre élégante des Bisschops. Ici, vous êtes invité à enrichir la collection avec votre propre dessin. Ne vous inquiétez pas pour votre vie privée : nous sommes ici purement pour l'art. 
+
+            Nous scannons uniquement ce qui se trouve sur votre papier, pas qui vous êtes. Pas de noms, pas de données, rien qui puisse vous identifier. Votre dessin est temporairement numérisé pour être intégré à la projection, après quoi tout disparaît. Vous êtes le maître anonyme qui donne un nouvel éclat à cette pièce.
+
+            Sachez toutefois que les dessins inappropriés ne seront pas exposés, ce qui vous obligerait à recréer une œuvre d'art.
+
+            Amusez-vous bien, nouvel artiste !`,
+            stepTitle: "Étapes", 
+            step1: "Les vieux fils de Rotterdam", 
+            step2: "Les vieux fils de Rotterdam", 
+            step3: "Les vieux fils de Rotterdam", 
+            scanTitle: "Scanner", 
+            confirmQ: "Voulez-vous utiliser cette photo ?", 
+            sureQ: "Êtes-vous sûr?",
+            loadingText: "Un instant s'il vous plaît...",
+            successText: "Votre dessin a été reçu avec succès, découvrez maintenant votre propre œuvre dans la salle d'époque des frères Bisschop",
+            errorText: "Malheureusement, ce dessin ne correspond pas à la collection historique des Bisschops, nous ne pouvons donc pas l'exposer, mais n'hésitez pas à en essayer un nouveau qui correspond mieux au XVIIIe siècle!",
+            yes: "Oui", 
+            no: "Non" 
+        },
+        de: { 
+            title: "Die alten Fäden von Rotterdam", 
+            subtitle: "Erleben Sie das Rotterdam des 18. Jahrhunderts durch immersive Technologie", 
+            'scroll-text': `Willkommen im stilvollen Zimmer der Familie Bisschops. Hier dürfen Sie die Sammlung mit Ihrer eigenen Zeichnung ergänzen. Machen Sie sich keine Sorgen um den Datenschutz: Wir sind rein aus Freude an der Kunst hier. 
+
+            Wir scannen nur, was auf Ihrem Papier steht, nicht wer Sie sind. Keine Namen, keine Daten, nichts, was Sie identifiziert. Ihre Zeichnung wird vorübergehend digitalisiert, um in der Projektion zu hängen, und danach ist alles wieder weg. Sie sind der anonyme Meister, der diesem Raum neuen Glanz verleiht.
+
+            Bitte beachten Sie jedoch, dass unpassende Zeichnungen nicht ausgestellt werden, was zur Folge hat, dass Sie ein neues Kunstwerk anfertigen müssen.
+
+            Viel Spaß, neuer Künstler!`,
+            stepTitle: "Schritte", 
+            step1: "Die alten Fäden von Rotterdam", 
+            step2: "Die alten Fäden von Rotterdam", 
+            step3: "Die alten Fäden von Rotterdam", 
+            scanTitle: "Scannen", 
+            confirmQ: "Möchten Sie dieses Foto verwenden ?", 
+            sureQ: "Sind Sie sicher?",
+            loadingText: "Einen Moment bitte...",
+            successText: "Ihre Zeichnung wurde erfolgreich empfangen. Erleben Sie Ihr eigenes Kunstwerk jetzt im historischen Zimmer der Brüder Bisschop",
+            errorText: "Leider passt diese Zeichnung nicht zur historischen Sammlung der Bisschops, daher können wir sie nicht ausstellen. Sie können jedoch gerne eine neue Zeichnung ausprobieren, die besser in das 18. Jahrhundert passt!",
+            yes: "Ja", 
+            no: "Nein" 
+        },
+        ja: { 
+            title: "ロッテルダムの古い糸", 
+            subtitle: "没入型テクノロジーで18世紀のロッテルダムを体験", 
+            'scroll-text': `ビショップスの洗練された部屋へようこそ。ここでは、あなた自身の絵でコレクションを彩ることができます。プライバシーについての心配はいりません。私たちは純粋にアートのためにここにいます。
+
+            私たちはあなたの紙に描かれているものだけをスキャンし、あなた自身を特定することはありません。名前も、データも、あなたを識別するものは一切記録されません。あなたの絵はプロジェクションに展示するために一時的にデジタル化されますが、その後はすべて消去されます。あなたは、この部屋に新しい輝きをもたらす匿名的存在です。
+
+            なお、不適切な絵は展示されません。その場合は、もう一度作品を作り直していただくことになりますのでご了承ください。
+
+            新しいアーティストの皆さん、どうぞ楽しんでください！`,
+            stepTitle: "ステップ", 
+            step1: "ロッテルダムの古い糸", 
+            step2: "ロッテルダムの古い糸", 
+            step3: "ロッテルダムの古い糸", 
+            scanTitle: "スキャン", 
+            confirmQ: "この写真を使用しますか？", 
+            sureQ: "本当によろしいですか？",
+            loadingText: "少々お待ちください...",
+            successText: "あなたの絵は正常に受信されました。ビショップ兄弟の時代部屋で、あなた自身の作品を今すぐ体験してください",
+            errorText: "残念ながら、この絵はビショップ家の歴史的コレクションと一致しないため、展示することはできませんが、18世紀により適した新しい絵をぜひ試してみてください！",
+            yes: "はい", 
+            no: "いいえ" 
+        },
+        zh: { 
+            title: "鹿特丹的老线", 
+            subtitle: "通过沉浸式技术体验18世纪的鹿特丹", 
+            'scroll-text': `欢迎来到比斯肖普斯（Bisschops）优雅的房间。在这里，诚邀您用自己的画作为藏品增色。无需担心隐私问题：我们纯粹是为了艺术而来。
+
+            我们只扫描您纸上的内容，而不扫描您是谁。没有姓名，没有数据，没有任何可以识别您身份的信息。您的画作将被暂时数字化并展示在投影中，随后一切都会被清除。您就是那位赋予这个房间全新光彩的匿名大师。
+
+            请注意，不适当的画作将不会被展出，这意味着您必须重新创作一件艺术品。
+
+            尽情享受吧，新晋艺术家！`,
+            stepTitle: "步骤", 
+            step1: "鹿特丹的老线", 
+            step2: "鹿特丹的老线", 
+            step3: "鹿特丹的老线", 
+            scanTitle: "扫描", 
+            confirmQ: "您要使用这张照片吗？", 
+            sureQ: "你确定吗？",
+            loadingText: "请稍候...",
+            successText: "您的画作已成功收到，现在就在比斯肖普兄弟的时期房间里体验您自己的艺术作品吧",
+            errorText: "遗憾的是，这幅画与比斯肖普斯的历史收藏不匹配，因此我们无法展出它，但请随时尝试一幅更适合18世纪的新画作！",
+            yes: "是", 
+            no: "否" 
+        }
+    };
+
+        let currentLanguage = 'nl';
 
         function setLanguage(lang) {
             currentLanguage = lang;
-            const text = translations[lang];
-            document.querySelector('h1').textContent = text.title;
-            captureBtn.textContent = text.capture;
-            confirmBtn.textContent = text.confirm;
-            retakeBtn.textContent = text.retake;
-        }
-
-        langBtnEN.addEventListener('click', () => setLanguage('en'));
-        langBtnNL.addEventListener('click', () => setLanguage('nl'));
-
-        setLanguage(currentLanguage);
-
-        // bewaar de laatste gemaakte foto totdat de gebruiker bevestigt
-        let currentBlob = null;
-
-        function showCaptureControls() {
-            capturedImage.style.display = 'none';
-            video.style.display = 'block';
-            captureBtn.style.display = 'inline';
-            confirmBtn.style.display = 'none';
-            retakeBtn.style.display = 'none';
-            currentBlob = null;
-        }
-
-        // de knoppen om de foto te bevestigen of opnieuw te maken
-        function showReviewButtons() {
-            confirmBtn.style.display = 'inline';
-            retakeBtn.style.display = 'inline';
-            captureBtn.style.display = 'none';
-        }
-
-        // Upload de foto pas als de gebruiker heeft bevestigd
-        async function uploadPhoto(blob) {
-            if (!blob) {
-                return;
-            }
-
-            // maak upload objects
-            const formData = new FormData();
-            // voeg bestand toe
-            formData.append(
-                'file', // naam van veld
-                blob, // de afbeelding
-                'photo.png' // bestandsnaam             
-                );
-
-            try {
-                // stuur naar de api
-                const response = await fetch(
-                    'https://raspberrypi.tail1480d1.ts.net/app/upload',
-                    {
-                        method: 'POST',
-                        body: formData
-                    }
-                );
-
-                if (!response.ok) {
-                    console.error('Upload failed:', response.status, response.statusText);
-                } else {
-                    console.log('Verstuurd!');
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(elem => {
+                const key = elem.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    elem.textContent = translations[lang][key];
                 }
-            } catch (err) {
-                console.error('Fout bij upload:', err);
+            });
+        }
+
+        function navigateTo(screenId) {
+            document.querySelectorAll('.app-screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+            
+            if (screenId === 'screen-camera') {
+                startCamera();
             }
         }
 
-        // vraag toestemming om de camera te gebruiken
-        navigator.mediaDevices.getUserMedia({
-            video: { facingMode: 'environment' }
-        })
-        .then(stream => {
-            video.srcObject = stream;
-        })
-        .catch(err => {
-            console.error('Error accessing camera:', err);
-            alert('Unable to access camera.');
+        const fabPlus = document.getElementById('fab-plus');
+        const languageOptions = document.getElementById('languageOptions');
+
+        fabPlus.addEventListener('click', (e) => {
+            e.stopPropagation();
+            languageOptions.classList.toggle('open');
+            fabPlus.classList.toggle('rotated');
         });
 
-        // maakt een foto
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const selectedLang = btn.getAttribute('data-lang');
+                setLanguage(selectedLang);
+                languageOptions.classList.remove('open');
+                fabPlus.classList.remove('rotated');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            languageOptions.classList.remove('open');
+            fabPlus.classList.remove('rotated');
+        });
+
+        let currentStepState = 0;
+        const stepNextBtn = document.getElementById('step-next-btn');
+        
+        stepNextBtn.addEventListener('click', () => {
+            currentStepState++;
+            if (currentStepState === 1) {
+                document.getElementById('step-1').classList.remove('hide');
+            } else if (currentStepState === 2) {
+                document.getElementById('step-2').classList.remove('hide');
+            } else if (currentStepState === 3) {
+                document.getElementById('step-3').classList.remove('hide');
+            } else {
+                currentStepState = 0;
+                document.querySelectorAll('.step-item').forEach(el => el.classList.add('hide'));
+                navigateTo('screen-camera');
+            }
+        });
+
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const capturedImage = document.getElementById('capturedImage');
+        const captureBtn = document.getElementById('captureBtn');
+        let currentBlob = null;
+        let streamActive = null;
+
+        function startCamera() {
+            if (streamActive) return;
+            navigator.mediaDevices.getUserMedia({
+                video: { facingMode: 'environment' }
+            })
+            .then(stream => {
+                streamActive = stream;
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error('Camera fout:', err);
+            });
+        }
+
+        function stopCamera() {
+            if (streamActive) {
+                streamActive.getTracks().forEach(track => track.stop());
+                streamActive = null;
+            }
+        }
+
         captureBtn.addEventListener('click', async () => {
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
-
             ctx.drawImage(video, 0, 0);
 
-            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg'));
             currentBlob = blob;
 
-            capturedImage.src = canvas.toDataURL('image/png');
-            capturedImage.style.display = 'block';
-
-            video.style.display = 'none';
-            showReviewButtons();
+            capturedImage.src = canvas.toDataURL('image/jpeg');
+            
+            stopCamera();
+            navigateTo('screen-confirm');
         });
 
-        // Upload de foto als de gebruiker akkoord is
-        confirmBtn.addEventListener('click', async () => {
-            if (!currentBlob) {
-                return;
-            }
+        const confirmBtn = document.getElementById('confirmBtn');
+        const retakeBtn = document.getElementById('retakeBtn');
+        const surePopupOverlay = document.getElementById('sure-popup-overlay');
+        const sureYesBtn = document.getElementById('sureYesBtn');
+        const sureNoBtn = document.getElementById('sureNoBtn');
 
-            await uploadPhoto(currentBlob);
-            showCaptureControls();
-        });
+        const statusOverlay = document.getElementById('status-overlay');
+        const statusLoading = document.getElementById('status-loading');
+        const statusSuccess = document.getElementById('status-success');
+        const statusError = document.getElementById('status-error');
 
-        // zet de app terug om opnieuw te maken
         retakeBtn.addEventListener('click', () => {
-            showCaptureControls();
+            navigateTo('screen-camera');
         });
-    </script>
 
+        confirmBtn.addEventListener('click', () => {
+            surePopupOverlay.classList.remove('hide');
+        });
+
+        sureNoBtn.addEventListener('click', () => {
+            surePopupOverlay.classList.add('hide');
+        });
+
+        sureYesBtn.addEventListener('click', async () => {
+            if (!currentBlob) return;
+
+            surePopupOverlay.classList.add('hide');
+
+            const photoUrl = URL.createObjectURL(currentBlob);
+            statusOverlay.style.backgroundImage = `url('${photoUrl}')`;
+
+            statusOverlay.classList.remove('hide');
+            statusLoading.classList.remove('hide');
+            statusSuccess.classList.add('hide');
+            statusError.classList.add('hide');
+
+            const formData = new FormData();
+            formData.append('file', currentBlob, 'photo.jpg');
+
+            try {
+                const response = await fetch('https://raspberrypi.tail1480d1.ts.net/app/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                statusLoading.classList.add('hide');
+
+                if (response.ok) {
+                    statusSuccess.classList.remove('hide');
+                    setTimeout(() => {
+                        statusOverlay.classList.add('hide');
+                        navigateTo('screen-home');
+                    }, 6000);
+                } else {
+                    statusError.classList.remove('hide');
+                    setTimeout(() => {
+                        statusOverlay.classList.add('hide');
+                        navigateTo('screen-camera');
+                    }, 6000);
+                }
+            } catch (err) {
+                console.error(err);
+                statusLoading.classList.add('hide');
+                statusError.classList.remove('hide');
+                setTimeout(() => {
+                    statusOverlay.classList.add('hide');
+                    navigateTo('screen-camera');
+                }, 6000);
+            }
+        });
+
+        setLanguage(currentLanguage);
+    </script>
 </body>
 </html>
