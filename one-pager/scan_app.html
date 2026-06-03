@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="scan_app.css" rel="stylesheet">
     <title>De Oude Draden van Rotterdam</title>
+    <link rel="stylesheet" href="scan_app.css">
 </head>
 <body>
 
-    <div id="screen-home" class="app-screen active">
+    <div id="screen-home" class="app-screen active fade-in">
         <div class="background-map"></div>
         <div class="content-wrapper">
             <h1 data-translate="title">De oude draden van Rotterdam</h1>
@@ -46,19 +46,31 @@
         
         <div class="steps-container">
             <div id="step-1" class="step-item hide">
-                <span class="step-number">1</span>
-                <div class="step-illustration img-illustration-1"><img src="images/1step.0.gif" alt="Animatie"></div>
-                <p data-translate="step1">Wees een kunstenaar. Teken jouw eigen schilderij.</p>
+                <div class="step-left">
+                    <span class="step-number">1</span>
+                    <div class="step-illustration img-illustration-1"><img src="images/1step.0.gif" alt="Animatie"></div>
+                </div>
+                <div class="step-right">
+                    <p data-translate="step1">Wees een kunstenaar. Teken jouw eigen schilderij.</p>
+                </div>
             </div>
             <div id="step-2" class="step-item hide">
-                <span class="step-number">2</span>
-                <div class="step-illustration img-illustration-2"><img src="images/2step.0.gif" alt="Animatie"></div>
-                <p data-translate="step2">Scan de schilderij in door het maken van een foto via de scna app.</p>
+                <div class="step-left">
+                    <span class="step-number">2</span>
+                    <div class="step-illustration img-illustration-2"><img src="images/2step.0.gif" alt="Animatie"></div>
+                </div>
+                <div class="step-right">
+                    <p data-translate="step2">Scan de schilderij in door het making van een foto via de scna app.</p>
+                </div>
             </div>
             <div id="step-3" class="step-item hide">
-                <span class="step-number">3</span>
-                <div class="step-illustration img-illustration-3"><img src="images/3step.0.gif" alt="Animatie"></div>
-                <p data-translate="step3">Ervaar jouw eigen schilderij in de stijlkamer van de broers Bisschop.</p>
+                <div class="step-left">
+                    <span class="step-number">3</span>
+                    <div class="step-illustration img-illustration-3"><img src="images/3step.0.gif" alt="Animatie"></div>
+                </div>
+                <div class="step-right">
+                    <p data-translate="step3">Ervaar jouw eigen schilderij in de stijlkamer van de broers Bisschop.</p>
+                </div>
             </div>
         </div>
 
@@ -135,11 +147,11 @@
             subtitle: "Beleef de Rotterdamse 18e eeuw door immersive technologie", 
             'scroll-text': `Welkom in de stijlvolle kamer van de Bisschops. Hier mag jij de collectie aanvullen met je eigen tekening. Maak je geen zorgen over privacy: we zijn hier puur voor de kunst. 
 
-            We scannen alleen wat op je papier staat, niet wie jij bent. Geen namen, geen data, niets dat je identificeert. Je tekening wordt tijdelijk digitaal gemaakt om in de projectie te hangen, en daarna is alles weer weg. Je bent de anonieme meester die deze kamer een nieuwe glans geeft.
+    We scannen alleen wat op je papier staat, niet wie jij bent. Geen namen, geen data, niets dat je identificeert. Je tekening wordt tijdelijk digitaal gemaakt om in de projectie te hangen, en daarna is alles weer weg. Je bent de anonieme meester die deze kamer een nieuwe glans geeft.
 
-            Houd er wel rekening mee dat ongepaste tekeningen niet worden tentoongesteld, met als gevolg dat je opnieuw een kunstwerk moet maken.
+    Houd er wel rekening mee dat ongepaste tekeningen niet worden tentoongesteld, met als gevolg dat je opnieuw een kunstwerk moet maken.
 
-            Veel plezier, nieuwe kunstenaar!`,
+    Veel plezier, nieuwe kunstenaar!`,
             stepTitle: "Stappen", 
             step1: "Wees een kunstenaar. Teken jouw eigen schilderij.", 
             step2: "Scan de schilderij in door het maken van een foto via de scna app.", 
@@ -158,15 +170,15 @@
             subtitle: "Experience the 18th century of Rotterdam through immersive technology", 
             'scroll-text': `Welcome to the elegant room of the Bisschops. Here, you are invited to add your own drawing to the collection. Do not worry about privacy: we are here purely for the art. 
 
-            We only scan what is on your paper, not who you are. No names, no data, nothing that identifies you. Your drawing is temporarily digitized to be displayed in the projection, and afterwards, everything is gone. You are the anonymous master giving this room a new splendor.
+    We only scan what is on your paper, not who you are. No names, no data, nothing that identifies you. Your drawing is temporarily digitized to be displayed in the projection, and afterwards, everything is gone. You are the anonymous master giving this room a new splendor.
 
-            Please keep in mind that inappropriate drawings will not be displayed, which means you will have to create a new piece of art.
+    Please keep in mind that inappropriate drawings will not be displayed, which means you will have to create a new piece of art.
 
-            Have fun, new artist!`,
+    Have fun, new artist!`,
             stepTitle: "Steps", 
-            step1: "The old threads of Rotterdam", 
-            step2: "The old threads of Rotterdam", 
-            step3: "The old threads of Rotterdam", 
+            step1: "Be an artist. Draw your own painting.", 
+            step2: "Scan the painting by taking a photo via the scan app.", 
+            step3: "Experience your own painting in the period room of the Bisschop brothers.", 
             scanTitle: "Scan", 
             confirmQ: "Do you want to use this photo ?", 
             sureQ: "Are you sure?",
@@ -181,15 +193,15 @@
             subtitle: "Découvrez le 18ème siècle de Rotterdam grâce à la technologie immersive", 
             'scroll-text': `Bienvenue dans la chambre élégante des Bisschops. Ici, vous êtes invité à enrichir la collection avec votre propre dessin. Ne vous inquiétez pas pour votre vie privée : nous sommes ici purement pour l'art. 
 
-            Nous scannons uniquement ce qui se trouve sur votre papier, pas qui vous êtes. Pas de noms, pas de données, rien qui puisse vous identifier. Votre dessin est temporairement numérisé pour être intégré à la projection, après quoi tout disparaît. Vous êtes le maître anonyme qui donne un nouvel éclat à cette pièce.
+    Nous scannons uniquement ce qui se trouve sur votre papier, pas qui vous êtes. Pas de noms, pas de données, rien qui puisse vous identifier. Votre dessin est temporairement numérisé pour être intégré à la projection, après quoi tout disparaît. Vous êtes le maître anonyme qui donne un nouvel éclat à cette pièce.
 
-            Sachez toutefois que les dessins inappropriés ne seront pas exposés, ce qui vous obligerait à recréer une œuvre d'art.
+    Sachez toutefois que les dessins inappropriés ne seront pas exposés, ce qui vous obligerait à recréer une œuvre d'art.
 
-            Amusez-vous bien, nouvel artiste !`,
+    Amusez-vous bien, nouvel artiste !`,
             stepTitle: "Étapes", 
-            step1: "Les vieux fils de Rotterdam", 
-            step2: "Les vieux fils de Rotterdam", 
-            step3: "Les vieux fils de Rotterdam", 
+            step1: "Soyez un artiste. Dessinez votre propre tableau.", 
+            step2: "Scannez le tableau en prenant une photo via l'application de numérisation.", 
+            step3: "Découvrez votre propre tableau dans la salle d'époque des frères Bisschop.", 
             scanTitle: "Scanner", 
             confirmQ: "Voulez-vous utiliser cette photo ?", 
             sureQ: "Êtes-vous sûr?",
@@ -202,17 +214,17 @@
         de: { 
             title: "Die alten Fäden von Rotterdam", 
             subtitle: "Erleben Sie das Rotterdam des 18. Jahrhunderts durch immersive Technologie", 
-            'scroll-text': `Willkommen im stilvollen Zimmer der Familie Bisschops. Hier dürfen Sie die Sammlung mit Ihrer eigenen Zeichnung ergänzen. Machen Sie sich keine Sorgen um den Datenschutz: Wir sind rein aus Freude an der Kunst hier. 
+            'scroll-text': `Willkommen im stilvollen Zimmer der Familie Bisschops. Here dürfen Sie die Sammlung mit Ihrer eigenen Zeichnung ergänzen. Machen Sie sich keine Sorgen um den Datenschutz: Wir sind rein aus Freude an der Kunst hier. 
 
-            Wir scannen nur, was auf Ihrem Papier steht, nicht wer Sie sind. Keine Namen, keine Daten, nichts, was Sie identifiziert. Ihre Zeichnung wird vorübergehend digitalisiert, um in der Projektion zu hängen, und danach ist alles wieder weg. Sie sind der anonyme Meister, der diesem Raum neuen Glanz verleiht.
+    Wir scannen nur, was auf Ihrem Papier steht, nicht wer Sie sind. Keine Namen, keine Daten, nichts, was Sie identifiziert. Ihre Zeichnung wird vorübergehend digitalisiert, um in der Projektion zu hängen, und danach ist alles wieder weg. Sie sind der anonyme Meister, der diesem Raum neuen Glanz verleiht.
 
-            Bitte beachten Sie jedoch, dass unpassende Zeichnungen nicht ausgestellt werden, was zur Folge hat, dass Sie ein neues Kunstwerk anfertigen müssen.
+    Bitte beachten Sie jedoch, dass unpassende Zeichnungen nicht ausgestellt werden, was zur Folge hat, dass Sie ein neues Kunstwerk anfertigen müssen.
 
-            Viel Spaß, neuer Künstler!`,
+    Viel Spaß, neuer Künstler!`,
             stepTitle: "Schritte", 
-            step1: "Die alten Fäden von Rotterdam", 
-            step2: "Die alten Fäden von Rotterdam", 
-            step3: "Die alten Fäden von Rotterdam", 
+            step1: "Seien Sie ein Künstler. Zeichnen Sie Ihr eigenes Gemälde.", 
+            step2: "Scannen Sie das Gemälde, indem Sie ein Foto über die Scan-App aufnehmen.", 
+            step3: "Erleben Sie Ihr eigenes Gemälde im historischen Zimmer der Brüder Bisschop.", 
             scanTitle: "Scannen", 
             confirmQ: "Möchten Sie dieses Foto verwenden ?", 
             sureQ: "Sind Sie sicher?",
@@ -227,15 +239,15 @@
             subtitle: "没入型テクノロジーで18世紀のロッテルダムを体験", 
             'scroll-text': `ビショップスの洗練された部屋へようこそ。ここでは、あなた自身の絵でコレクションを彩ることができます。プライバシーについての心配はいりません。私たちは純粋にアートのためにここにいます。
 
-            私たちはあなたの紙に描かれているものだけをスキャンし、あなた自身を特定することはありません。名前も、データも、あなたを識別するものは一切記録されません。あなたの絵はプロジェクションに展示するために一時的にデジタル化されますが、その後はすべて消去されます。あなたは、この部屋に新しい輝きをもたらす匿名的存在です。
+    私たちはあなたの紙に描かれているものだけをスキャンし、あなた自身を特定することはありません。名前も、データも、あなたを識別するものは一切記録されません。あなたの絵はプロジェクションに展示するために一時的にデジタル化されますが、その後はすべて消去されます。あなたは、この部屋に新しい輝きをもたらす匿名的存在です。
 
-            なお、不適切な絵は展示されません。その場合は、もう一度作品を作り直していただくことになりますのでご了承ください。
+    なお、不適切な絵は展示されません。その場合は、もう一度作品を作り直していただくことになりますのでご了承ください。
 
-            新しいアーティストの皆さん、どうぞ楽しんでください！`,
+    新しいアーティストの皆さん、どうぞ楽しんでください！`,
             stepTitle: "ステップ", 
-            step1: "ロッテルダムの古い糸", 
-            step2: "ロッテルダムの古い糸", 
-            step3: "ロッテルダムの古い糸", 
+            step1: "アーティストになりましょう。あなた自身の絵を描いてください。", 
+            step2: "スキャンアプリを使って写真を撮影し、絵をスキャンします。", 
+            step3: "ビショップ兄弟の時代部屋で、あなた自身の作品を今すぐ体験してください。", 
             scanTitle: "スキャン", 
             confirmQ: "この写真を使用しますか？", 
             sureQ: "本当によろしいですか？",
@@ -250,15 +262,15 @@
             subtitle: "通过沉浸式技术体验18世纪的鹿特丹", 
             'scroll-text': `欢迎来到比斯肖普斯（Bisschops）优雅的房间。在这里，诚邀您用自己的画作为藏品增色。无需担心隐私问题：我们纯粹是为了艺术而来。
 
-            我们只扫描您纸上的内容，而不扫描您是谁。没有姓名，没有数据，没有任何可以识别您身份的信息。您的画作将被暂时数字化并展示在投影中，随后一切都会被清除。您就是那位赋予这个房间全新光彩的匿名大师。
+    我们只扫描您纸上的内容，而不扫描您是谁。没有姓名，没有数据，没有任何可以识别您身份的信息。您的画作将被暂时数字化并展示在投影中，随后一切都会被清除。您就是那位赋予这个房间全新光彩的匿名大师。
 
-            请注意，不适当的画作将不会被展出，这意味着您必须重新创作一件艺术品。
+    请注意，不适当的画作将不会被展出，这意味着您必须重新创作一件艺术品。
 
-            尽情享受吧，新晋艺术家！`,
+    尽情享受吧，新晋艺术家！`,
             stepTitle: "步骤", 
-            step1: "鹿特丹的老线", 
-            step2: "鹿特丹的老线", 
-            step3: "鹿特丹的老线", 
+            step1: "成为一名艺术家。画出属于你自己的画作。", 
+            step2: "通过扫描应用拍摄照片来扫描画作。", 
+            step3: "在比斯肖普兄弟的时装室里体验你自己的画作。", 
             scanTitle: "扫描", 
             confirmQ: "您要使用这张照片吗？", 
             sureQ: "你确定吗？",
@@ -284,11 +296,43 @@
         }
 
         function navigateTo(screenId) {
-            document.querySelectorAll('.app-screen').forEach(s => s.classList.remove('active'));
-            document.getElementById(screenId).classList.add('active');
+            const currentActive = document.querySelector('.app-screen.active');
+            const targetScreen = document.getElementById(screenId);
             
+            if (currentActive) {
+                currentActive.classList.remove('fade-in');
+                setTimeout(() => {
+                    currentActive.classList.remove('active');
+                    targetScreen.classList.add('active');
+                    
+                    // Trigger reflow to make the transition work
+                    targetScreen.offsetWidth;
+                    
+                    targetScreen.classList.add('fade-in');
+                    handleScreenSpecifics(screenId);
+                }, 500); // match transition length
+            } else {
+                targetScreen.classList.add('active');
+                targetScreen.offsetWidth;
+                targetScreen.classList.add('fade-in');
+                handleScreenSpecifics(screenId);
+            }
+        }
+
+        function handleScreenSpecifics(screenId) {
             if (screenId === 'screen-camera') {
                 startCamera();
+            } else {
+                stopCamera();
+            }
+
+            if (screenId === 'screen-steps') {
+                // Reset states of animated steps
+                currentStepState = 0;
+                document.querySelectorAll('.step-item').forEach(el => {
+                    el.classList.add('hide');
+                    el.classList.remove('whoosh');
+                });
             }
         }
 
@@ -321,14 +365,25 @@
         stepNextBtn.addEventListener('click', () => {
             currentStepState++;
             if (currentStepState === 1) {
-                document.getElementById('step-1').classList.remove('hide');
+                const step = document.getElementById('step-1');
+                step.classList.remove('hide');
+                setTimeout(() => {
+                    step.classList.add('whoosh');
+                }, 50);
             } else if (currentStepState === 2) {
-                document.getElementById('step-2').classList.remove('hide');
+                const step = document.getElementById('step-2');
+                step.classList.remove('hide');
+                setTimeout(() => {
+                    step.classList.add('whoosh');
+                }, 50);
             } else if (currentStepState === 3) {
-                document.getElementById('step-3').classList.remove('hide');
+                const step = document.getElementById('step-3');
+                step.classList.remove('hide');
+                setTimeout(() => {
+                    step.classList.add('whoosh');
+                }, 50);
             } else {
                 currentStepState = 0;
-                document.querySelectorAll('.step-item').forEach(el => el.classList.add('hide'));
                 navigateTo('screen-camera');
             }
         });
