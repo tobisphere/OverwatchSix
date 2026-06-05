@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  camera-app:
+    build: .
+    container_name: camera_webapp
+    ports:
+      - "8080:80"
+    restart: unless-stopped
