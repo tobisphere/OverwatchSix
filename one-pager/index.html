@@ -643,7 +643,7 @@ Wel bleek dat interactie, progressie en beloning motiverend werkten. Wanneer geb
                             <button class="proces-tab active" data-tab="sprint4-doel">Sprint doel</button>
                             <button class="proces-tab" data-tab="sprint4-kyd">Kill Your Darling</button>
                             <button class="proces-tab" data-tab="sprint4-teamwaarden">Team waarden</button>
-                            <button class="proces-tab" data-tab="sprint4-concept">Concepten</button>
+                            <button class="proces-tab" data-tab="sprint4-concept">Smart & Social fest</button>
                             <button class="proces-tab" data-tab="sprint4-museumbezoek">Museum bezoek</button>
                             <button class="proces-tab" data-tab="sprint4-stadsarchief">Stadsarchief bezoek</button>
                             <button class="proces-tab" data-tab="sprint4-onderzoek">Onderzoek</button>
@@ -695,14 +695,23 @@ Wel bleek dat interactie, progressie en beloning motiverend werkten. Wanneer geb
 
                         <div class="proces-tab-content" data-content="sprint4-concept">
                             <div class="proces-content-box">
-                                <h3>Concepten</h3>
-                                <ul>
-                                    <li>Crazy 8-sessie om meerdere ideeën te genereren en snel opties te vergelijken.</li>
-                                    <li>Websiteconcept opgesteld en uitgewerkt met structuur en contentflow.</li>
-                                    <li>Poster ontwikkeld om het project visueel te presenteren aan partners.</li>
-                                    <li>Kijkdoos gemaakt om ons project op een laagdrempelige manier te kunnen testen </li>
-                                    <li>Video voor het telefoonprototype voorbereid om de mobiele ervaring duidelijk te maken.</li>
-                                </ul>
+                                <h3>Smart & Social fest</h3>
+                                <p>
+                                    Voor het smart & social fest heeft Tallysia een kijkdoos prototype gemaakt die we bij bezoekers hebben getest. Met deze kijkdoos probeerde wij ons concept van een immersieve ruimte kleinschalig na te bootsen. Hiervoor heeft Pepijn ook korte video's in elkaar gezet die wij in de kijk doos geplaatst hebben. Deze hebben wij toen getest op de bezoekers van het smart & social fest.  
+                                </p>
+                                <p>
+                                    Na de korte testjes hebben wij doormiddel van een QR-code die op de informatie poster staat, feedback gevraagd om ons prototype te verbeteren in de volgende fase. Naast het testen voor feedback hebben wij ook geprobeerd contacten te leggen met personen die ons zouden kunnen samenwerken met ons project.
+                                </p>
+                                <div class="row">
+                                    <div class="prototype-image column">
+                                        <img src="images/Poster.jpeg" alt="Poster">
+                                        <p class="image-caption">Poster</p>
+                                    </div>
+                                    <div class="prototype-image column">
+                                        <img src="images/Kijkdoos.jpeg" alt="Kijkdoos">
+                                        <p class="image-caption">Kijkdoos</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -778,6 +787,7 @@ Wel bleek dat interactie, progressie en beloning motiverend werkten. Wanneer geb
                             <button class="proces-tab" data-tab="sprint5-probe">Probe testing</button>
                             <button class="proces-tab" data-tab="sprint5-scan-app">Scan app</button>
                             <button class="proces-tab" data-tab="sprint5-api-server">Api Server</button>
+                            <button class="proces-tab" data-tab="sprint5-ai-moderation-system">Ai moderation system</button>
                             <button class="proces-tab" data-tab="sprint5-unreal-engine">Unreal Engine</button>
                             <button class="proces-tab" data-tab="sprint5-blender">Blender</button>
                             <button class="proces-tab" data-tab="sprint5-interview">Interview</button>
@@ -800,7 +810,7 @@ Wel bleek dat interactie, progressie en beloning motiverend werkten. Wanneer geb
                                     Voor het prototype in sprint 4 heeft Tallysia een kijkdoos gemaakt die de immersieve ervaring kleinschalig nabootst. Met dit prototype willen wij testen met het doel of de testpersonen een immersieve ervaring beleven. 
                                 </p>
                                 <p>
-                                    In de kijkdoos hebben wij dan ook twee videobeelden neergezet die gemaakt zijn door Pepijn. Hier zijn beelden te zien van personen die langs lopen en hebben audio geluiden zoals achtergrondgeluiden en muziek. Deze hebben wij getest met klasgenoten en tijdens de smart & social fest.  
+                                    In de kijkdoos hebben wij dan ook twee videobeelden neergezet die gemaakt zijn door Pepijn. Hier zijn beelden te zien van personen die langs lopen en hebben audio geluiden zoals achtergrondgeluiden en muziek. Deze versie hebben wij getest met bezoekers van het smart & social fest.  
                                 </p>
                                 <p>
                                     De testen met klasgenoten hebben wij gedaan door er een storyline audio aan toe te voegen die de omgeving beschrijft en meer over de 18e eeuw verteld. Dit is toen goed bevallen met positief feedback, waardoor wij veder konden gaan met het veder ontwikkelen van ons concept. 
@@ -811,19 +821,56 @@ Wel bleek dat interactie, progressie en beloning motiverend werkten. Wanneer geb
                             <div class="proces-content-box">
                                 <h3>Scan Applicatie</h3>
                                 <p>
-                                    Julina heeft een webapplicatie ontwikkeld waarin je een illustratie kan fotograferen en die kan uploaden naar de immersieve ervaring. De webapplicatie is inclusief gemaakt door meerdere talen toe te voegen, duidelijke instructies toe te voegen en simpele UI te gebruiken.                                 
+                                    Julina heeft een webapplicatie ontwikkeld als brug tussen de fysieke wereld en de immersieve historische ervaring. Met deze app kunnen gebruikers hun eigen illustraties eenvoudig scannen via de camera en direct uploaden naar het projectiesysteem in de stijlvolle kamer van de broers Bisschop.
                                 </p>
+                                <p>
+                                    De applicatie biedt een gebruiksvriendelijke interface met duidelijke navigatiestappen: van de introductiepagina met uitleg over het concept tot aan de daadwerkelijke camerascans. Het systeem ondersteunt zes talen (Nederlands, Engels, Frans, Duits, Japans en Chinees), wat ervoor zorgt dat lokale bezoekers en internationale toeristen zich direct thuis voelen.
+                                </p>
+                                <p>
+                                    Technisch gezien maakt de app gebruik van modern web functionality zoals de getUserMedia API voor live camera-weergave, Canvas voor het vastleggen van foto's, en FormData voor het uploaden van bestanden naar de api-server van Tobias.
+                                </p>
+                                <p>
+                                    Bij het uploaden wordt de ingezonden tekening automatisch gecontroleerd door de AI-model van Tyrese. Als het werk past binnen de historische collectie van de 18e eeuwse stijl, krijgt de gebruiker bevestiging en kan het stuk worden getoond. Bij afwijkingen wordt vriendelijk feedback gegeven met de optie om opnieuw te proberen.
+                                </p>
+                                <a href="https://github.com/tobisphere/OverwatchSix/blob/main/one-pager/scan_app.html">Github voor scan app</a>
+                                <div class="prototype-image column">
+                                    <img src="images/WebAppStappen.png" alt="Voorbeeld webapplicatie stappen" style="height:300px;width: 200px;">
+                                    <p class="image-caption">Stappen binnen de webapplicatie</p>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="proces-tab-content" data-content="sprint5-ai-moderation-system">
+                            <div class="proces-content-box">
+                                <h3>Ai Moderation System</h3>
+                                <p>
+                                    Voor de interactieve museumervaring is een AI-moderatiesysteem ontwikkeld dat controleert of tekeningen van bezoekers geschikt zijn voordat ze worden toegevoegd aan de digitale omgeving. Omdat bezoekers vrijheid krijgen om zelf iets te tekenen, bestaat er een risico dat ongepaste inhoud zoals beledigende teksten, haatdragende symbolen of schadelijke afbeeldingen zichtbaar worden binnen de ervaring. Het systeem ondersteunt daarom een veilige en toegankelijke omgeving voor alle bezoekers.                                
+                                </p>
+                                <p>
+                                    Het systeem maakt gebruik van een getraind computer vision model op basis van een ResNet18 neurale netwerkarchitectuur. Het model analyseert de afbeelding van een tekening en voorspelt of deze binnen de categorie safe of unsafe valt. Hiervoor is een dataset opgebouwd met veilige tekeningen en ongewenste voorbeelden. Omdat tekeningen veel variatie bevatten en dezelfde vormen verschillende betekenissen kunnen hebben, is de dataset uitgebreid met extra schetsvoorbeelden en augmentatie technieken zoals rotatie, helderheidsaanpassingen en kleine vervormingen. Hierdoor leert het model beter omgaan met verschillende tekenstijlen.
+                                </p>
+                                <p>
+                                    Naast beeldherkenning bevat het systeem extra veiligheidslagen. Een OCR-controle analyseert geschreven tekst in tekeningen en vergelijkt deze met een lijst van ongewenste woorden. Ook worden eerder afgekeurde tekeningen opgeslagen zodat vergelijkbare inhoud sneller herkend kan worden. Wanneer het AI-model onvoldoende zeker is van een voorspelling, wordt de tekening gemarkeerd als review_required in plaats van automatisch goedgekeurd.
+                                </p>
+                                <p>
+                                    Alle voorspellingen worden opgeslagen in een moderatielog waarin de afbeelding, voorspelling en zekerheidsscore zichtbaar zijn. Hierdoor kan menselijke feedback worden toegevoegd wanneer het model een fout maakt. Deze feedback kan vervolgens gebruikt worden om het model opnieuw te trainen en continu te verbeteren. 
+                                </p>
+                                <p>
+                                    Het doel van het systeem is niet om menselijke moderatie volledig te vervangen, maar om deze te ondersteunen. Door gebruik te maken van AI gecombineerd met menselijke controle ontstaat een verantwoord systeem dat rekening houdt met veiligheid, privacy en mogelijke fouten binnen kunstmatige intelligentie.
+                                </p>
+                                <a href="https://github.com/Tyrese124134/Hybride_wereld.git">Github voor ai moderation system</a>
+                            </div>
+                        </div>
+
 
                         <div class="proces-tab-content" data-content="sprint5-api-server">
                             <div class="proces-content-box">
                                 <h3>Api server</h3>
                                 <p>
-                                    Tobias heeft een api server opgezet die de foto's ontvangt van de webapplicatie en deze controleert of de afbeeldingen gepast zijn voordat ze worden opgeslagen. Bij een veiligheidscontrole die slaagt, wordt het bestand naar de lokale uploads-folder geschreven. Wordt de afbeelding geweigerd, dan wordt er een duidelijke error response terug gestuurd aan de client.                                \
+                                    Tobias heeft een api server opgezet die de foto's ontvangt van de webapplicatie en deze controleert of de afbeeldingen gepast zijn voordat ze worden opgeslagen. Bij een veiligheidscontrole die slaagt, wordt het bestand naar de lokale uploads-folder geschreven. Wordt de afbeelding geweigerd, dan wordt er een duidelijke error response terug gestuurd aan de client.
                                 </p>
                                 <p>
-                                    De server draait in een Docker-container met FastAPI als backend en Nginx als reverse proxy voor het behandelen van inkomende requests. Voor de contentanalyse wordt een trainend AI-model gebruikt dat elke upload checked. Het systeem bewaart een maximaal aantal recente afbeeldingen en verwijdert oudere bestanden automatisch om schijfruimte te besparen.
+                                    De server draait in een Docker-container met FastAPI als backend en Nginx als reverse proxy voor het behandelen van inkomende requests. Voor de contentanalyse die geimplementeerd is door Tyrese wordt een getraind AI-model gebruikt dat elke upload checked. Het systeem bewaart een maximaal aantal recente afbeeldingen en verwijdert oudere bestanden automatisch om schijfruimte te besparen.
                                 </p>
                                 <p>
                                     Voor communicatie staan meerdere endpoints beschikbaar: een gezondheidscheck (/health), de upload-route (/app/upload), en verschillende fetch-opties om bestanden te bekijken (/fetch, /fetchi/{id}, /fetch_all). Interactieve documentatie is beschikbaar via /docs.
@@ -831,6 +878,8 @@ Wel bleek dat interactie, progressie en beloning motiverend werkten. Wanneer geb
                                 <p>
                                     Voor toegang buiten het lokale netwerk wordt Tailscale gebruikt, wat een versleuteld prive netwerk biedt zonder dat openbare poorten nodig zijn of een publiek IP-adres wordt blootgesteld.
                                 </p>
+                                <a href="https://github.com/tobisphere/sem6-api-server">Github voor api server</a>
+                                <p></p>
                                 <div class="row">
                                     <div class="prototype-image column">
                                         <img src="images/FastApiNginx.jpeg" alt="FastAPI and Nginx">
@@ -853,8 +902,20 @@ Wel bleek dat interactie, progressie en beloning motiverend werkten. Wanneer geb
                                     Tyrese heeft in Unreal-Engine de digitale immersieve ervaring opgezet met de 3d modellen van blender. Daarnaast zijn er sfeer geluiden toegevoegd en bewegende partikels om vuur na te bootsen. Op de muren zijn blanke canvassen gehangen die worden gevuld als er een foto vanaf de webapplicatie wordt gestuurd, opgehaald worden via de api-server en dan worden weergegeven in Unreal engine.
                                 </p>
                                 <p>
-                                    Met behulp van Sequencer (LS_intro) is een automatische ervaring gemaakt waarbij de camera een scene van de kamer maakt. De ervaring speelt automatisch af en blijft continu herhalen, zodat deze geschikt is voor een museumopstelling.  
+                                    Met behulp van Sequencer (LS_intro) is een automatische ervaring gemaakt waarbij de camera een scene van de kamer maakt. Hierin gaan verschillende elementen in z’n werk waaronder audiolagen zoals kamerambience, wind en openhaardgeluiden worden afgespeeld op de achtergrond.  
                                 </p>
+                                <p>
+                                    Daarnaast is er gewerkt aan een protototype met AI voice en automatische ondertiteling om het historische verhaal door NPC’s te laten vertellen. Hiervoor werden widget blueprints gebruikt die tekst op het juiste moment konden tonen. Door een verandering in het concept is dit later verwijderd en is de focus gelegd op een rustigere ervaring met beeld en omgevingsgeluiden.  
+                                </p>
+                                <p>
+                                    Door auto play: enabled en loop: loop indefinitely te zetten zorgt dit ervoor dat de ervaring zich automatisch en continu blijft herhalen. Dit maakt het voor een museumopstelling. Al deze toepassingen zitten groot end deels in de content drawer. De ontwikkeling ervan werden in die mappen opgeslagen.  
+                                </p>
+
+                                <div class="prototype-image column">
+                                    <img src="images/UnrealEngine.png" alt="Unreal engine">
+                                    <p class="image-caption">Unreal Engine digitale immersieve ervaring</p>
+                                </div>
+                            
                             </div>
                         </div>
 
@@ -883,6 +944,10 @@ Wel bleek dat interactie, progressie en beloning motiverend werkten. Wanneer geb
                                 <p>
                                     Rob van noordhoek museum Rotterdam door Pepijn en Tally 
                                 </p>
+                                    <div class="prototype-image column">
+                                        <img src="images/InterviewHistoricus.png" alt="Interview">
+                                        <p class="image-caption">Interview</p>
+                                    </div>
                             </div>
                         </div>
 
@@ -950,10 +1015,6 @@ Wel bleek dat interactie, progressie en beloning motiverend werkten. Wanneer geb
 
             <div class="partner-logo partner-logo-square">
                 <img src="images/stadsarchief.png" alt="Stadsarchief">
-            </div>
-
-            <div class="partner-logo partner-logo-square">
-                <img src="images/openurbanplatform.jpg" alt="Open Urban Platform">
             </div>
 
         </div>
